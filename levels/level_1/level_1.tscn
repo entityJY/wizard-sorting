@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://crydldhop7eyk"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="ItemStack" type="Node2D" parent="."]
+
+[node name="LeftStack" type="Node2D" parent="."]
+position = Vector2(-350, 200)
+
+[node name="RightStack" type="Node2D" parent="."]
+position = Vector2(350, 200)
+
+[node name="Camera2D" type="Camera2D" parent="."]
