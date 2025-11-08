@@ -9,11 +9,17 @@ var discard_stack: Array[Item]
 
 func _process(_delta):
 	if Input.is_action_just_pressed("left"):
-		left_stack.append(unsorted_stack.pop_front())
+		var item = unsorted_stack.pop_front()
+		item.on_sort()
+		left_stack.append(item)
 	if Input.is_action_just_pressed("right"):
-		right_stack.append(unsorted_stack.pop_front())
+		var item = unsorted_stack.pop_front()
+		item.on_sort()
+		right_stack.append(item)
 	if Input.is_action_just_pressed("down"):
-		discard_stack.append(unsorted_stack.pop_front())
+		var item = unsorted_stack.pop_front()
+		item.on_discard()
+		discard_stack.append(item)
 	if unsorted_stack.is_empty():
 		calculate_score()
 
