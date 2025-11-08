@@ -1,10 +1,12 @@
 extends Node2D
 
-# right now, I have the stacks pointing to actual nodes in the scene, but that isn't really necesary, you could instead maybe just keep an in code list, or use some other implementation
+# feel free to change whatever you want in this file, I'm still trying to figure out a good implementation
+
+
 @export var unsorted_stack: Node2D
-@export var left_stack: Node2D
-@export var right_stack: Node2D
-@export var discard_stack: Node2D
+var left_stack: Array[Item]
+var right_stack: Array[Item]
+var discard_stack: Array[Item]
 
 # Contains (3?) variables: left stack, right stack, and unsorted stack (maybe include discard stack?)
 # on left/right, sort the first item in unsorted stack into left/right stack

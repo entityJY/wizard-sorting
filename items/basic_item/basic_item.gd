@@ -1,4 +1,5 @@
 extends Sprite2D
+class_name Item
 
 @export var attributes: Array[String]
 @export var effects: Array[Effect]
