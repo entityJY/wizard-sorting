@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdkxwxjdim3cu"]
+[gd_scene load_steps=2 format=3 uid="uid://bdkxwxjdim3cu"]
 
-[ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_lxkxa"]
 [ext_resource type="Script" uid="uid://drjgkm8r1ypcg" path="res://items/basic_item/basic_item.gd" id="1_qrn24"]
 
-[node name="BasicItem" type="TextureRect"]
-texture = ExtResource("1_lxkxa")
+[node name="BasicItem" type="Sprite2D"]
 script = ExtResource("1_qrn24")

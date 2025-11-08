@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://crydldhop7eyk"]
+[gd_scene load_steps=2 format=3 uid="uid://crydldhop7eyk"]
+
+[ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/level.gd" id="1_k1ttk"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_k1ttk")
 
 [node name="ItemStack" type="Node2D" parent="."]
 
