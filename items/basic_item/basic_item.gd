@@ -1,6 +1,5 @@
 extends TextureRect
 
-@export var left_side = true
 @export var attributes: Array[String]
 @export var effects: Array[Effect]
 
