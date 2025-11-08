@@ -1,4 +1,4 @@
-extends TextureRect
+extends Sprite2D
 
 @export var attributes: Array[String]
 @export var effects: Array[Effect]
