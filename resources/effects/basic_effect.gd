@@ -6,3 +6,6 @@ func on_discard():
 
 func on_sort():
 	pass
+
+func on_enter_active_sort():
+	pass
