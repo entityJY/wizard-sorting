@@ -18,6 +18,11 @@ func on_enter_active_sort(user_effects: UserEffects):
 	for effect in effects:
 		effect.on_enter_active_sort(user_effects)
 
-func set_attached_target(target: Vector2):
+
+func calculate_path_attached(target: Vector2) -> void:
 	if attached_node:
-		attached_node.target_position = target
+		attached_node.calculate_new_path(target)
+
+func add_attached_target(target: Vector2) -> void:
+	if attached_node:
+		attached_node.add_target_position(target)
