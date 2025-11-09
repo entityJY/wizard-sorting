@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlr50mqa38l6e"]
+
+[ext_resource type="Script" uid="uid://drjgkm8r1ypcg" path="res://items/basic_item.gd" id="1_0q4rs"]
+[ext_resource type="Texture2D" uid="uid://cpl3twwukqr3v" path="res://assets/blue knife.png" id="1_5qt0x"]
+
+[node name="BlueKnife" type="Sprite2D"]
+texture = ExtResource("1_5qt0x")
+script = ExtResource("1_0q4rs")
+metadata/_custom_type_script = "uid://drjgkm8r1ypcg"

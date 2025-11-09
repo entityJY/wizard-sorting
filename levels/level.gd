@@ -1,13 +1,23 @@
 extends Node2D
 
 
-@export var unsorted_stack: ItemStack
+@export var starting_stack: ItemStack
+var unsorted_stack: ItemStack
 var left_stack: Array[Item]
 var right_stack: Array[Item]
 var discard_stack: Array[Item]
 
 signal stack_sorted(score: int)
 var user_effects: UserEffects = UserEffects.new()
+
+var left_target: Vector2
+var right_target: Vector2
+
+
+func _ready():
+	left_target = $LeftStack.global_position
+	right_target = $RightStack.global_position
+	start_level()
 
 func _process(_delta):
 	var left = Input.is_action_just_pressed("left")
@@ -21,16 +31,23 @@ func _process(_delta):
 	if left:
 		var item = unsorted_stack.pop_front()
 		item.on_sort(user_effects)
+		left_target.y -= item.sprite.get_height()/2
+		item.set_attached_target(left_target)
+		left_target.y -= item.sprite.get_height()/2
 		left_stack.append(item)
 	
 	if right:
 		var item = unsorted_stack.pop_front()
 		item.on_sort(user_effects)
+		right_target.y -= item.sprite.get_height()/2
+		item.set_attached_target(right_target)
+		right_target.y -= item.sprite.get_height()/2
 		right_stack.append(item)
 	
 	if down:
 		var item = unsorted_stack.pop_front()
 		item.on_discard(user_effects)
+		item.set_attached_target(Vector2(0, 450))
 		discard_stack.append(item)
 		
 	if left or right or down:
@@ -40,20 +57,23 @@ func _process(_delta):
 	if unsorted_stack.is_empty():
 		calculate_score()
 
+
 func sort_dict(a: String, b: String, dict: Dictionary):
 	return true if dict[a] > dict[b] else false
 
 func calculate_score():
 	var score = 0
 
-	# get attributes
+	# get attributes and set target positions
 	var left_attributes = {}
 	for item in left_stack:
+		item.set_attached_target(Vector2(left_target.x, left_target.y + 700))
 		for attribute in item.attributes:
 			var curr = left_attributes.get_or_add(attribute, 0)
 			left_attributes[attribute] = curr + 1
 	var right_attributes = {}
 	for item in right_stack:
+		item.set_attached_target(Vector2(right_target.x, right_target.y + 700))
 		for attribute in item.attributes:
 			var curr = right_attributes.get_or_add(attribute, 0)
 			right_attributes[attribute] = curr + 1
@@ -96,3 +116,24 @@ func calculate_score():
 			score -= 1
 
 	stack_sorted.emit(score)
+
+
+func start_level():
+	var item_array: Array[Item]
+	for item in starting_stack.item_stack:
+		item_array.append(item.duplicate())
+	unsorted_stack = ItemStack.new(item_array, starting_stack.randomized_order)
+	
+	var start_position: Vector2 = $ItemStack.global_position
+	var prev_height: int = 0
+	unsorted_stack.item_stack.reverse()
+	for item in unsorted_stack.item_stack:
+		@warning_ignore("integer_division")
+		start_position.y -= (item.sprite.get_height() + prev_height) / 2
+		var scene: ItemScene = ItemScene.new(item.sprite)
+		scene.global_position = start_position
+		scene.target_position = start_position
+		item.attached_node = scene
+		$InstantiatedItems.add_child(scene)
+		prev_height = item.sprite.get_height()
+	unsorted_stack.item_stack.reverse()
