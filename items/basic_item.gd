@@ -5,14 +5,14 @@ class_name Item
 @export var effects: Array[Effect]
 @export var sprite: Resource
 
-func on_sort():
+func on_sort(user_effects: UserEffects):
 	for effect in effects:
-		effect.on_sort()
+		effect.on_sort(user_effects)
 
-func on_discard():
+func on_discard(user_effects: UserEffects):
 	for effect in effects:
-		effect.on_discard()
+		effect.on_discard(user_effects)
 
-func on_enter_active_sort():
+func on_enter_active_sort(user_effects: UserEffects):
 	for effect in effects:
-		effect.on_enter_active_sort()
+		effect.on_enter_active_sort(user_effects)

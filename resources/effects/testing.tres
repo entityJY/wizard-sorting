@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="Testing" load_steps=2 format=3 uid="uid://cbv0whnqi2max"]
-
-[ext_resource type="Script" uid="uid://5lvdawc7vant" path="res://resources/effects/testing.gd" id="1_lohkx"]
-
-[resource]
-script = ExtResource("1_lohkx")
-metadata/_custom_type_script = "uid://5lvdawc7vant"

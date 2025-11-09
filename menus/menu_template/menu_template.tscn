@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://qatke1gxcfu3"]
+
+[ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_2r4ti"]
+
+[node name="main_menu" type="CanvasLayer"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_2r4ti")
