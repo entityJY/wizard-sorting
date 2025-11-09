@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://crydldhop7eyk"]
+[gd_scene load_steps=9 format=3 uid="uid://crydldhop7eyk"]
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/level.gd" id="1_k1ttk"]
-[ext_resource type="Script" uid="uid://drjgkm8r1ypcg" path="res://items/basic_item.gd" id="2_45440"]
 [ext_resource type="Resource" uid="uid://brf5m8q0pmjd" path="res://items/knife.tres" id="3_5b03i"]
 [ext_resource type="Resource" uid="uid://cdd0hn52p0g8q" path="res://items/hammer.tres" id="4_e6u7d"]
 [ext_resource type="Resource" uid="uid://b4c701y1hsxkv" path="res://items/bow.tres" id="5_mxc8w"]
-[ext_resource type="Texture2D" uid="uid://jifkbc8iqi82" path="res://Backgrounds/practice background.png" id="6_e6u7d"]
+[ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="6_mxc8w"]
+[ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="7_j48du"]
+[ext_resource type="Texture2D" uid="uid://07t0yhbsmgo2" path="res://Backgrounds/background2.png" id="8_j48du"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_k1ttk")
-unsorted_stack = Array[ExtResource("2_45440")]([ExtResource("3_5b03i"), ExtResource("4_e6u7d"), ExtResource("3_5b03i"), ExtResource("5_mxc8w"), ExtResource("3_5b03i"), ExtResource("5_mxc8w"), ExtResource("4_e6u7d")])
+unsorted_stack = [ExtResource("5_mxc8w"), ExtResource("4_e6u7d"), ExtResource("3_5b03i"), ExtResource("5_mxc8w"), ExtResource("4_e6u7d")]
 
 [node name="ItemStack" type="Node2D" parent="."]
 
@@ -21,11 +22,16 @@ position = Vector2(350, 200)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="TableFront" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(4.5, 394.5)
+texture = ExtResource("6_mxc8w")
+
+[node name="TableBase" type="Sprite2D" parent="."]
+position = Vector2(4.5, 394.5)
+texture = ExtResource("7_j48du")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-5, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
-texture = ExtResource("6_e6u7d")
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+texture = ExtResource("8_j48du")
