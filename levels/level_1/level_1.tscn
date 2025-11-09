@@ -7,9 +7,8 @@
 [ext_resource type="Resource" uid="uid://b4c701y1hsxkv" path="res://items/bow.tres" id="5_mxc8w"]
 
 [node name="Level1" type="Node2D"]
-position = Vector2(-5, 0)
 script = ExtResource("1_k1ttk")
-unsorted_stack = Array[ExtResource("2_45440")]([ExtResource("3_5b03i"), ExtResource("4_e6u7d"), ExtResource("3_5b03i"), ExtResource("5_mxc8w"), ExtResource("3_5b03i"), ExtResource("5_mxc8w"), ExtResource("4_e6u7d")])
+unsorted_stack = Array[ExtResource("2_45440")]([ExtResource("5_mxc8w"), ExtResource("4_e6u7d"), ExtResource("3_5b03i"), ExtResource("5_mxc8w"), ExtResource("4_e6u7d")])
 
 [node name="ItemStack" type="Node2D" parent="."]
 

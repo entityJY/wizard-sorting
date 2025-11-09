@@ -5,20 +5,26 @@ extends Node2D
 var left_stack: Array[Item]
 var right_stack: Array[Item]
 var discard_stack: Array[Item]
-
+var user_effects: UserEffects = UserEffects.new()
 
 func _process(_delta):
-	if Input.is_action_just_pressed("left"):
+	var left = Input.is_action_just_pressed("left")
+	var right = Input.is_action_just_pressed("right")
+	var down = Input.is_action_just_pressed("down")
+	if (user_effects.confusion > 0):
+		left = Input.is_action_just_pressed("right")
+		right = Input.is_action_just_pressed("left")
+	if left:
 		var item = unsorted_stack.pop_front()
-		item.on_sort()
+		item.on_sort(user_effects)
 		left_stack.append(item)
-	if Input.is_action_just_pressed("right"):
+	if right:
 		var item = unsorted_stack.pop_front()
-		item.on_sort()
+		item.on_sort(user_effects)
 		right_stack.append(item)
-	if Input.is_action_just_pressed("down"):
+	if down:
 		var item = unsorted_stack.pop_front()
-		item.on_discard()
+		item.on_discard(user_effects)
 		discard_stack.append(item)
 	if unsorted_stack.is_empty():
 		calculate_score()
