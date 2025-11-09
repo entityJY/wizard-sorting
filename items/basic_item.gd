@@ -19,6 +19,5 @@ func on_enter_active_sort(user_effects: UserEffects):
 		effect.on_enter_active_sort(user_effects)
 
 func set_attached_target(target: Vector2):
-	attached_node.sorted = true
 	if attached_node:
 		attached_node.target_position = target

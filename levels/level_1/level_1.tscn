@@ -12,6 +12,7 @@
 [sub_resource type="Resource" id="Resource_e6u7d"]
 script = ExtResource("5_8jbay")
 item_stack = Array[ExtResource("2_45440")]([ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("4_8jbay"), ExtResource("4_8jbay"), ExtResource("4_8jbay"), ExtResource("4_8jbay")])
+randomized_order = true
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
 [node name="Level1" type="Node2D"]
@@ -22,10 +23,10 @@ starting_stack = SubResource("Resource_e6u7d")
 position = Vector2(0, 400)
 
 [node name="LeftStack" type="Node2D" parent="."]
-position = Vector2(-430, 470)
+position = Vector2(-430, 300)
 
 [node name="RightStack" type="Node2D" parent="."]
-position = Vector2(431, 470)
+position = Vector2(431, 300)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

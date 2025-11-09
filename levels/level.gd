@@ -10,8 +10,13 @@ var discard_stack: Array[Item]
 signal stack_sorted(score: int)
 var user_effects: UserEffects = UserEffects.new()
 
+var left_target: Vector2
+var right_target: Vector2
+
 
 func _ready():
+	left_target = $LeftStack.global_position
+	right_target = $RightStack.global_position
 	start_level()
 
 func _process(_delta):
@@ -26,13 +31,17 @@ func _process(_delta):
 	if left:
 		var item = unsorted_stack.pop_front()
 		item.on_sort(user_effects)
-		item.set_attached_target($LeftStack.global_position)
+		left_target.y -= item.sprite.get_height()/2
+		item.set_attached_target(left_target)
+		left_target.y -= item.sprite.get_height()/2
 		left_stack.append(item)
 	
 	if right:
 		var item = unsorted_stack.pop_front()
 		item.on_sort(user_effects)
-		item.set_attached_target($RightStack.global_position)
+		right_target.y -= item.sprite.get_height()/2
+		item.set_attached_target(right_target)
+		right_target.y -= item.sprite.get_height()/2
 		right_stack.append(item)
 	
 	if down:
@@ -55,14 +64,16 @@ func sort_dict(a: String, b: String, dict: Dictionary):
 func calculate_score():
 	var score = 0
 
-	# get attributes
+	# get attributes and set target positions
 	var left_attributes = {}
 	for item in left_stack:
+		item.set_attached_target(Vector2(left_target.x, left_target.y + 700))
 		for attribute in item.attributes:
 			var curr = left_attributes.get_or_add(attribute, 0)
 			left_attributes[attribute] = curr + 1
 	var right_attributes = {}
 	for item in right_stack:
+		item.set_attached_target(Vector2(right_target.x, right_target.y + 700))
 		for attribute in item.attributes:
 			var curr = right_attributes.get_or_add(attribute, 0)
 			right_attributes[attribute] = curr + 1
