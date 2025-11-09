@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccd3pyrrye7oo"]
+
+[ext_resource type="Script" uid="uid://bemvfnqtapohu" path="res://scenes/item_scene.gd" id="1_a127h"]
+
+[node name="ItemScene" type="Sprite2D"]
+script = ExtResource("1_a127h")
+metadata/_custom_type_script = "uid://bemvfnqtapohu"

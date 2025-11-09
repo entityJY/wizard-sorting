@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="3_65rus"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("2_65rus")
 attributes = Array[String](["ranged", "pierce"])
 sprite = ExtResource("3_65rus")

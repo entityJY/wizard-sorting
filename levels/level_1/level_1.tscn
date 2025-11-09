@@ -2,31 +2,34 @@
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/level.gd" id="1_k1ttk"]
 [ext_resource type="Script" uid="uid://drjgkm8r1ypcg" path="res://items/basic_item.gd" id="2_45440"]
-[ext_resource type="Resource" uid="uid://b6wciwk4136me" path="res://items/blue_potion.tres" id="4_j48du"]
+[ext_resource type="Resource" uid="uid://dxgdjwptdx0cn" path="res://items/blue_knife.tres" id="3_j48du"]
+[ext_resource type="Resource" uid="uid://bhrgju2sfgtru" path="res://items/knife.tres" id="4_8jbay"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="5_8jbay"]
-[ext_resource type="Resource" uid="uid://b4c701y1hsxkv" path="res://items/bow.tres" id="5_mxc8w"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="6_mxc8w"]
 [ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="7_j48du"]
 [ext_resource type="Texture2D" uid="uid://07t0yhbsmgo2" path="res://Backgrounds/background2.png" id="8_j48du"]
 
-[sub_resource type="Resource" id="Resource_la5aw"]
+[sub_resource type="Resource" id="Resource_e6u7d"]
 script = ExtResource("5_8jbay")
-item_stack = Array[ExtResource("2_45440")]([ExtResource("5_mxc8w"), ExtResource("5_mxc8w"), ExtResource("5_mxc8w"), ExtResource("5_mxc8w"), ExtResource("4_j48du"), ExtResource("4_j48du"), ExtResource("4_j48du"), ExtResource("4_j48du")])
+item_stack = Array[ExtResource("2_45440")]([ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("4_8jbay"), ExtResource("4_8jbay"), ExtResource("4_8jbay"), ExtResource("4_8jbay")])
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_k1ttk")
-unsorted_stack = SubResource("Resource_la5aw")
+starting_stack = SubResource("Resource_e6u7d")
 
 [node name="ItemStack" type="Node2D" parent="."]
+position = Vector2(0, 400)
 
 [node name="LeftStack" type="Node2D" parent="."]
-position = Vector2(-350, 200)
+position = Vector2(-430, 470)
 
 [node name="RightStack" type="Node2D" parent="."]
-position = Vector2(350, 200)
+position = Vector2(431, 470)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="InstantiatedItems" type="Node" parent="."]
 
 [node name="TableFront" type="Sprite2D" parent="."]
 top_level = true
