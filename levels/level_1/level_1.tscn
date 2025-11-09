@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://brf5m8q0pmjd" path="res://items/knife.tres" id="3_5b03i"]
 [ext_resource type="Resource" uid="uid://cdd0hn52p0g8q" path="res://items/hammer.tres" id="4_e6u7d"]
 [ext_resource type="Resource" uid="uid://b4c701y1hsxkv" path="res://items/bow.tres" id="5_mxc8w"]
-[ext_resource type="Texture2D" uid="uid://jifkbc8iqi82" path="res://Backgrounds/practice background.png" id="6_e6u7d"]
+[ext_resource type="Texture2D" uid="uid://07t0yhbsmgo2" path="res://Backgrounds/background2.png" id="6_e6u7d"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_k1ttk")
@@ -27,5 +27,4 @@ position = Vector2(350, 200)
 position = Vector2(-5, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
 texture = ExtResource("6_e6u7d")
