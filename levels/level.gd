@@ -6,6 +6,8 @@ var left_stack: Array[Item]
 var right_stack: Array[Item]
 var discard_stack: Array[Item]
 
+signal stack_sorted(score: int)
+
 
 func _process(_delta):
 	if Input.is_action_just_pressed("left"):
@@ -27,7 +29,8 @@ func _process(_delta):
 		calculate_score()
 
 func calculate_score():
-	# needs finishing
+	var score = 0
+
 	var left_attributes = {}
 	for item in left_stack:
 		for attribute in item.attributes:
@@ -39,3 +42,5 @@ func calculate_score():
 		for attribute in item.attributes:
 			var curr = right_attributes.get_or_add(attribute, 0)
 			right_attributes[attribute] = curr + 1
+
+	stack_sorted.emit(score)
