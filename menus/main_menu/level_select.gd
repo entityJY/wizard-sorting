@@ -1,5 +1,4 @@
 extends TextureButton
-signal level_select
 
 func _on_pressed() -> void:
-	level_select.emit()
+	get_tree().change_scene_to_file("res://menus/level_select/level_select.tscn")

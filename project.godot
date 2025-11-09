@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Wizard Sorting"
-run/main_scene="uid://bw3u83unndaf5"
+run/main_scene="uid://cdq6lo7lqgeaq"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
