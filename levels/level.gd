@@ -56,7 +56,7 @@ func _process(_delta):
 	if down:
 		var item = unsorted_stack.pop_front()
 		item.on_discard(user_effects)
-		item.set_attached_target(Vector2(0, 450))
+		item.set_attached_target(Vector2(0, 600))
 		discard_stack.append(item)
 		
 	if left or right or down:
