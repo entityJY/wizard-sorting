@@ -1,34 +1,23 @@
-[gd_scene load_steps=16 format=3 uid="uid://crydldhop7eyk"]
+[gd_scene load_steps=10 format=3 uid="uid://crydldhop7eyk"]
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/level.gd" id="1_k1ttk"]
 [ext_resource type="Script" uid="uid://drjgkm8r1ypcg" path="res://items/basic_item.gd" id="2_45440"]
 [ext_resource type="Resource" uid="uid://dxgdjwptdx0cn" path="res://items/blue_knife.tres" id="3_j48du"]
-[ext_resource type="Resource" uid="uid://bhrgju2sfgtru" path="res://items/knife.tres" id="4_8jbay"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="5_8jbay"]
-[ext_resource type="Resource" uid="uid://cxwjyucgeju8o" path="res://items/hammer.tres" id="6_1ow6f"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="6_mxc8w"]
-[ext_resource type="Resource" uid="uid://cdxtiijwx4pfu" path="res://items/red_potion.tres" id="7_7rikf"]
 [ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="7_j48du"]
 [ext_resource type="Texture2D" uid="uid://07t0yhbsmgo2" path="res://Backgrounds/background2.png" id="8_j48du"]
-[ext_resource type="Resource" uid="uid://bc2wyf85lloq4" path="res://items/red_mace.tres" id="8_ov0dm"]
 [ext_resource type="Resource" uid="uid://b6wciwk4136me" path="res://items/blue_potion.tres" id="9_lwxes"]
-[ext_resource type="Resource" uid="uid://b4c701y1hsxkv" path="res://items/bow.tres" id="10_tk2t7"]
-
-[sub_resource type="Resource" id="Resource_e6u7d"]
-script = ExtResource("5_8jbay")
-item_stack = Array[ExtResource("2_45440")]([ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("4_8jbay"), ExtResource("4_8jbay"), ExtResource("4_8jbay"), ExtResource("4_8jbay")])
-randomized_order = true
-metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
 [sub_resource type="Resource" id="Resource_j48du"]
 script = ExtResource("5_8jbay")
-item_stack = Array[ExtResource("2_45440")]([ExtResource("6_1ow6f"), ExtResource("7_7rikf"), ExtResource("8_ov0dm"), ExtResource("3_j48du"), ExtResource("9_lwxes"), ExtResource("10_tk2t7"), ExtResource("6_1ow6f"), ExtResource("8_ov0dm")])
+item_stack = Array[ExtResource("2_45440")]([ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("9_lwxes"), ExtResource("9_lwxes"), ExtResource("9_lwxes"), ExtResource("9_lwxes")])
 randomized_order = true
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("stack_timer")]
 script = ExtResource("1_k1ttk")
-stacks = Array[ExtResource("5_8jbay")]([SubResource("Resource_e6u7d"), SubResource("Resource_j48du"), SubResource("Resource_j48du")])
+stacks = Array[ExtResource("5_8jbay")]([SubResource("Resource_j48du")])
 stack_timer = NodePath("StackTimer")
 
 [node name="StackTimer" type="Timer" parent="."]

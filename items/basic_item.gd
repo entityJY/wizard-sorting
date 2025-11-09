@@ -1,7 +1,19 @@
 extends Resource
 class_name Item
 
-@export var attributes: Array[String]
+
+enum Attributes {
+	CUT,
+	BLUNT,
+	PIERCE,
+	POTION,
+	BLUE,
+	RED,
+	DISCARD,
+}
+
+
+@export var attributes: Array[Attributes]
 @export var effects: Array[Effect]
 @export var sprite: Texture2D
 var attached_node: ItemScene = null

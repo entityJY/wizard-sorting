@@ -115,11 +115,14 @@ func calculate_score():
 		@warning_ignore("integer_division")
 		score = (len(left_stack) + len(right_stack)) / 2
 		for item in left_stack:
-			if not left_keys[0] in item.attributes:
+			if not left_keys[0] in item.attributes or not Item.Attributes.DISCARD in item.attributes:
 				score -= 1
 		for item in right_stack:
-			if not right_keys[0] in item.attributes:
+			if not right_keys[0] in item.attributes or not Item.Attributes.DISCARD in item.attributes:
 				score -= 1
+		for item in discard_stack:
+			if Item.Attributes.DISCARD in item.attributes:
+				score += 1
 	
 	stack_timer.start()
 	total_score += score
