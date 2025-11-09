@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var unsorted_stack: Array[Item]
+@export var unsorted_stack: ItemStack
 var left_stack: Array[Item]
 var right_stack: Array[Item]
 var discard_stack: Array[Item]
@@ -35,7 +35,7 @@ func _process(_delta):
 		
 	if left or right or down:
 		if not unsorted_stack.is_empty():
-			unsorted_stack[0].on_enter_active_sort(user_effects)
+			unsorted_stack.item_stack[0].on_enter_active_sort(user_effects)
 	
 	if unsorted_stack.is_empty():
 		calculate_score()
@@ -72,17 +72,16 @@ func calculate_score():
 
 	# remove duplicate keys if they're both the greatest
 	while true:
+		if left_keys.is_empty() or right_keys.is_empty():
+			break
 		if left_keys[0] == right_keys[0]:
 			left_keys.pop_front()
 			right_keys.pop_front()
 		else:
 			break
-		if left_keys.is_empty() or right_keys.is_empty():
-			break
 	
 	# check if keys are zero, return zero
 	if len(left_keys) == 0 or len(right_keys) == 0:
-		print(score)
 		stack_sorted.emit(score)
 		return
 
