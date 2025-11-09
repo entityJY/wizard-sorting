@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw3u83unndaf5"]
+
+[ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_6qgcp"]
+[ext_resource type="Script" uid="uid://dlw422wiaxk0r" path="res://menus/main_menu/settings.gd" id="2_2kpsw"]
+[ext_resource type="Script" uid="uid://ci2v720grhjgh" path="res://menus/main_menu/level_select.gd" id="3_2kpsw"]
+[ext_resource type="Script" uid="uid://cimc6mhhppooa" path="res://menus/main_menu/start_button.gd" id="3_5nlyh"]
+
+[node name="main_menu" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_6qgcp")
+
+[node name="Title" type="RichTextLabel" parent="."]
+offset_left = -2.0
+offset_top = 135.0
+offset_right = 1918.0
+offset_bottom = 301.0
+theme_override_font_sizes/normal_font_size = 96
+text = "WIZARD SORTING"
+horizontal_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 110.0
+offset_right = 64.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_6qgcp")
+script = ExtResource("2_2kpsw")
+
+[node name="Level Select" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_6qgcp")
+script = ExtResource("3_2kpsw")
+
+[node name="Start or Continue" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -190.0
+offset_right = 64.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_6qgcp")
+script = ExtResource("3_5nlyh")
+
+[connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
+[connection signal="pressed" from="Level Select" to="Level Select" method="_on_pressed"]
+[connection signal="pressed" from="Start or Continue" to="Start or Continue" method="_on_pressed"]
