@@ -2,7 +2,10 @@ extends Resource
 class_name Effect
 
 func on_discard():
-    pass
+	pass
 
 func on_sort():
-    pass
+	pass
+
+func on_enter_active_sort():
+	pass

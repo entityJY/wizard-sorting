@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://jifkbc8iqi82" path="res://Backgrounds/practice background.png" id="6_e6u7d"]
 
 [node name="Level1" type="Node2D"]
-position = Vector2(-5, 0)
 script = ExtResource("1_k1ttk")
 unsorted_stack = Array[ExtResource("2_45440")]([ExtResource("3_5b03i"), ExtResource("4_e6u7d"), ExtResource("3_5b03i"), ExtResource("5_mxc8w"), ExtResource("3_5b03i"), ExtResource("5_mxc8w"), ExtResource("4_e6u7d")])
 
