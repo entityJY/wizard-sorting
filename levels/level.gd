@@ -60,6 +60,7 @@ func _process(_delta):
 		discard_stack.append(item)
 		
 	if left or right or down:
+		user_effects.decrement_effects()
 		if not unsorted_stack.is_empty():
 			unsorted_stack.item_stack[0].on_enter_active_sort(user_effects)
 	
@@ -161,6 +162,9 @@ func start_level():
 		$InstantiatedItems.add_child(scene)
 		prev_height = item.sprite.get_height()
 	unsorted_stack.item_stack.reverse()
+
+	# activate on_active effect of first item
+	unsorted_stack.item_stack[0].on_enter_active_sort(user_effects)
 
 
 func _on_stack_timer_timeout():
