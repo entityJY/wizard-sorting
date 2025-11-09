@@ -1,25 +1,34 @@
 extends Node2D
 
 
-@export var starting_stack: ItemStack
+@export var stacks: Array[ItemStack]
 var unsorted_stack: ItemStack
 var left_stack: Array[Item]
 var right_stack: Array[Item]
 var discard_stack: Array[Item]
 
-signal stack_sorted(score: int)
 var user_effects: UserEffects = UserEffects.new()
 
 var left_target: Vector2
 var right_target: Vector2
 
+@export var stack_timer: Timer
+
+var between_stacks: bool = false
+
+signal stack_sorted(score: int)
+var total_score: int = 0
+signal level_complete(total_score: int)
+
 
 func _ready():
-	left_target = $LeftStack.global_position
-	right_target = $RightStack.global_position
 	start_level()
 
 func _process(_delta):
+
+	if between_stacks:
+		return
+
 	var left = Input.is_action_just_pressed("left")
 	var right = Input.is_action_just_pressed("right")
 	var down = Input.is_action_just_pressed("down")
@@ -62,18 +71,18 @@ func sort_dict(a: String, b: String, dict: Dictionary):
 	return true if dict[a] > dict[b] else false
 
 func calculate_score():
+	between_stacks = true
+
 	var score = 0
 
-	# get attributes and set target positions
+	# get attributes
 	var left_attributes = {}
 	for item in left_stack:
-		item.set_attached_target(Vector2(left_target.x, left_target.y + 700))
 		for attribute in item.attributes:
 			var curr = left_attributes.get_or_add(attribute, 0)
 			left_attributes[attribute] = curr + 1
 	var right_attributes = {}
 	for item in right_stack:
-		item.set_attached_target(Vector2(right_target.x, right_target.y + 700))
 		for attribute in item.attributes:
 			var curr = right_attributes.get_or_add(attribute, 0)
 			right_attributes[attribute] = curr + 1
@@ -101,24 +110,32 @@ func calculate_score():
 			break
 	
 	# check if keys are zero, return zero
-	if len(left_keys) == 0 or len(right_keys) == 0:
-		stack_sorted.emit(score)
-		return
-
-	# actual scoring
-	@warning_ignore("integer_division")
-	score = (len(left_stack) + len(right_stack)) / 2
-	for item in left_stack:
-		if not left_keys[0] in item.attributes:
-			score -= 1
-	for item in right_stack:
-		if not right_keys[0] in item.attributes:
-			score -= 1
-
+	if len(left_keys) != 0 and len(right_keys) != 0:
+		# actual scoring
+		@warning_ignore("integer_division")
+		score = (len(left_stack) + len(right_stack)) / 2
+		for item in left_stack:
+			if not left_keys[0] in item.attributes:
+				score -= 1
+		for item in right_stack:
+			if not right_keys[0] in item.attributes:
+				score -= 1
+	
+	if stack_timer.is_stopped():
+		stack_timer.start()
+	
+	total_score += score
 	stack_sorted.emit(score)
 
 
 func start_level():
+	between_stacks = false
+
+	left_target = $LeftStack.global_position
+	right_target = $RightStack.global_position
+
+	var starting_stack = stacks.pop_front()
+
 	var item_array: Array[Item]
 	for item in starting_stack.item_stack:
 		item_array.append(item.duplicate())
@@ -132,8 +149,22 @@ func start_level():
 		start_position.y -= (item.sprite.get_height() + prev_height) / 2
 		var scene: ItemScene = ItemScene.new(item.sprite)
 		scene.global_position = start_position
+		scene.global_position.y -= 2000
 		scene.target_position = start_position
 		item.attached_node = scene
 		$InstantiatedItems.add_child(scene)
 		prev_height = item.sprite.get_height()
 	unsorted_stack.item_stack.reverse()
+
+
+func _on_stack_timer_timeout():
+	for item in left_stack:
+		item.set_attached_target(Vector2(left_target.x, $LeftStack.global_position.y + 700))
+	for item in right_stack:
+		item.set_attached_target(Vector2(right_target.x, $RightStack.global_position.y + 700))
+	if not stacks.is_empty():
+		start_level()
+	else:
+		level_complete.emit(total_score)
+		print("Level Complete! Total Score: ")
+		print(total_score)
