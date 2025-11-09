@@ -7,5 +7,5 @@ func on_discard(_user_effects: UserEffects):
 func on_sort(_user_effects: UserEffects):
 	pass
 
-func on_enter_active_sort():
+func on_enter_active_sort(_user_effects: UserEffects):
 	pass

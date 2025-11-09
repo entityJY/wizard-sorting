@@ -13,6 +13,6 @@ func on_discard(user_effects: UserEffects):
 	for effect in effects:
 		effect.on_discard(user_effects)
 
-func on_enter_active_sort():
+func on_enter_active_sort(user_effects: UserEffects):
 	for effect in effects:
-		effect.on_enter_active_sort()
+		effect.on_enter_active_sort(user_effects)

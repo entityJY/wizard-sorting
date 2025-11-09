@@ -11,24 +11,29 @@ func _process(_delta):
 	var left = Input.is_action_just_pressed("left")
 	var right = Input.is_action_just_pressed("right")
 	var down = Input.is_action_just_pressed("down")
+
 	if (user_effects.confusion > 0):
 		left = Input.is_action_just_pressed("right")
 		right = Input.is_action_just_pressed("left")
+	
 	if left:
 		var item = unsorted_stack.pop_front()
 		item.on_sort(user_effects)
 		left_stack.append(item)
-		unsorted_stack[0].on_enter_active_sort()
+		unsorted_stack[0].on_enter_active_sort(user_effects)
+	
 	if right:
 		var item = unsorted_stack.pop_front()
 		item.on_sort(user_effects)
 		right_stack.append(item)
-		unsorted_stack[0].on_enter_active_sort()
+		unsorted_stack[0].on_enter_active_sort(user_effects)
+	
 	if down:
 		var item = unsorted_stack.pop_front()
 		item.on_discard(user_effects)
 		discard_stack.append(item)
-		unsorted_stack[0].on_enter_active_sort()
+		unsorted_stack[0].on_enter_active_sort(user_effects)
+	
 	if unsorted_stack.is_empty():
 		calculate_score()
 
