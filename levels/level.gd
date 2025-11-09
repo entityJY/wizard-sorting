@@ -39,7 +39,7 @@ func _process(_delta):
 	
 	if left:
 		var item = unsorted_stack.pop_front()
-		item.on_sort(user_effects)
+		item.on_sort()
 		left_target.y -= item.sprite.get_height()/2
 		item.calculate_path_attached(left_target)
 		left_target.y -= item.sprite.get_height()/2
@@ -47,7 +47,7 @@ func _process(_delta):
 	
 	if right:
 		var item = unsorted_stack.pop_front()
-		item.on_sort(user_effects)
+		item.on_sort()
 		right_target.y -= item.sprite.get_height()/2
 		item.calculate_path_attached(right_target)
 		right_target.y -= item.sprite.get_height()/2
@@ -55,14 +55,14 @@ func _process(_delta):
 	
 	if down:
 		var item = unsorted_stack.pop_front()
-		item.on_discard(user_effects)
+		item.on_discard()
 		item.add_attached_target(Vector2(0, 600))
 		discard_stack.append(item)
 		
 	if left or right or down:
 		user_effects.decrement_effects()
 		if not unsorted_stack.is_empty():
-			unsorted_stack.item_stack[0].on_enter_active_sort(user_effects)
+			unsorted_stack.item_stack[0].on_enter_active_sort()
 	
 	if unsorted_stack.is_empty():
 		calculate_score()
@@ -151,20 +151,28 @@ func start_level():
 	var start_position: Vector2 = $ItemStack.global_position
 	var prev_height: int = 0
 	unsorted_stack.item_stack.reverse()
+
 	for item in unsorted_stack.item_stack:
 		@warning_ignore("integer_division")
 		start_position.y -= (item.sprite.get_height() + prev_height) / 2
 		var scene: ItemScene = ItemScene.new(item.sprite)
+		$InstantiatedItems.add_child(scene)
 		scene.global_position = start_position
 		scene.global_position.y -= 2000
 		scene.set_target_positions([start_position])
 		item.attached_node = scene
-		$InstantiatedItems.add_child(scene)
+		# create timers for TimedEffects
+		for effect in item.effects:
+			effect.set_user_effects_ref(user_effects)
+			if effect is TimedEffect:
+				effect.create_timer.connect(scene.start_effect_timer)
+
 		prev_height = item.sprite.get_height()
+	
 	unsorted_stack.item_stack.reverse()
 
 	# activate on_active effect of first item
-	unsorted_stack.item_stack[0].on_enter_active_sort(user_effects)
+	unsorted_stack.item_stack[0].on_enter_active_sort()
 
 
 func _on_stack_timer_timeout():

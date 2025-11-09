@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ConfusionTimed" load_steps=2 format=3 uid="uid://b18jmcb5bt05j"]
+
+[ext_resource type="Script" uid="uid://tud5x2saps16" path="res://resources/effects/confusion_timed.gd" id="1_mmoqw"]
+
+[resource]
+script = ExtResource("1_mmoqw")
+duration = 20.0
+target = 2

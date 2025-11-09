@@ -29,3 +29,7 @@ func add_target_position(target: Vector2) -> void:
 
 func set_target_positions(targets: Array[Vector2]) -> void:
 	target_positions = targets
+
+func start_effect_timer(duration: float, effect: TimedEffect):
+	var timer = get_tree().create_timer(duration)
+	timer.timeout.connect(effect.timer_end)

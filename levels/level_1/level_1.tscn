@@ -5,28 +5,28 @@
 [ext_resource type="Resource" uid="uid://dxgdjwptdx0cn" path="res://items/blue_knife.tres" id="3_j48du"]
 [ext_resource type="Script" uid="uid://5vfpq1c3oeq8" path="res://resources/effects/basic_effect.gd" id="4_la5aw"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="5_8jbay"]
-[ext_resource type="Resource" uid="uid://bgxys31xdw6vm" path="res://resources/effects/confusion_on_active.tres" id="5_hyp3v"]
+[ext_resource type="Resource" uid="uid://b18jmcb5bt05j" path="res://resources/effects/confusion_timed_on_active.tres" id="5_hyp3v"]
 [ext_resource type="Texture2D" uid="uid://cpl3twwukqr3v" path="res://assets/blue knife.png" id="5_qbdb0"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="6_mxc8w"]
 [ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="7_j48du"]
 [ext_resource type="Texture2D" uid="uid://07t0yhbsmgo2" path="res://Backgrounds/background2.png" id="8_j48du"]
 [ext_resource type="Resource" uid="uid://b6wciwk4136me" path="res://items/blue_potion.tres" id="9_lwxes"]
 
-[sub_resource type="Resource" id="Resource_hyp3v"]
+[sub_resource type="Resource" id="Resource_qbdb0"]
 resource_local_to_scene = true
 script = ExtResource("2_45440")
 effects = Array[ExtResource("4_la5aw")]([ExtResource("5_hyp3v")])
 sprite = ExtResource("5_qbdb0")
 metadata/_custom_type_script = "uid://drjgkm8r1ypcg"
 
-[sub_resource type="Resource" id="Resource_j48du"]
+[sub_resource type="Resource" id="Resource_hyp3v"]
 script = ExtResource("5_8jbay")
-item_stack = Array[ExtResource("2_45440")]([SubResource("Resource_hyp3v"), ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("3_j48du"), ExtResource("9_lwxes"), ExtResource("9_lwxes"), ExtResource("9_lwxes"), ExtResource("9_lwxes")])
+item_stack = Array[ExtResource("2_45440")]([SubResource("Resource_qbdb0"), ExtResource("3_j48du"), ExtResource("9_lwxes"), ExtResource("9_lwxes")])
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("stack_timer")]
 script = ExtResource("1_k1ttk")
-stacks = Array[ExtResource("5_8jbay")]([SubResource("Resource_j48du")])
+stacks = Array[ExtResource("5_8jbay")]([SubResource("Resource_hyp3v")])
 stack_timer = NodePath("StackTimer")
 
 [node name="StackTimer" type="Timer" parent="."]

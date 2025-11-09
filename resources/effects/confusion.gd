@@ -3,5 +3,5 @@ class_name Confusion
 
 @export var duration: int
 
-func effect(user_effects: UserEffects):
+func effect():
 	user_effects.confusion = duration
