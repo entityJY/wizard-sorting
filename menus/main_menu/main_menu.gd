@@ -1,5 +1,6 @@
 extends CanvasLayer
 signal pack_up
+signal transition
 
 
 func _on_pack_up() -> void:

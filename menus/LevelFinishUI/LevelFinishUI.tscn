@@ -1,21 +1,21 @@
 [gd_scene load_steps=12 format=3 uid="uid://buc2wf64kxubv"]
 
-[ext_resource type="Script" uid="uid://bkfiqbmdt62ob" path="res://menus/level_finish_ui.gd" id="1_byj2t"]
-[ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_f5ava"]
-[ext_resource type="Script" uid="uid://swuf1fi60t56" path="res://menus/score_background.gd" id="2_byj2t"]
-[ext_resource type="Script" uid="uid://dfy2vp503gxab" path="res://menus/level_completed.gd" id="3_aj2gs"]
-[ext_resource type="Texture2D" uid="uid://d6r4dw0crej8" path="res://assets/house.png" id="4_5cfwx"]
-[ext_resource type="Script" uid="uid://cnl1hwsn7lrgp" path="res://menus/return_to_menu.gd" id="4_aj2gs"]
-[ext_resource type="Script" uid="uid://c66d1jsi8mpms" path="res://menus/score.gd" id="4_w3r4p"]
-[ext_resource type="Texture2D" uid="uid://biscg3y7631g2" path="res://assets/househighlight.png" id="5_6glrl"]
-[ext_resource type="Texture2D" uid="uid://dnmiunuvrag87" path="res://assets/arrow.png" id="7_aha8w"]
-[ext_resource type="Texture2D" uid="uid://cvvii5n1w08qn" path="res://assets/arrowhighlight.png" id="8_vl52c"]
-[ext_resource type="Theme" uid="uid://4ney4y7vfk1q" path="res://theme.tres" id="9_aha8w"]
+[ext_resource type="Script" uid="uid://bkfiqbmdt62ob" path="res://menus/LevelFinishUI/level_finish_ui.gd" id="1_6msl1"]
+[ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="2_cwesl"]
+[ext_resource type="Script" uid="uid://swuf1fi60t56" path="res://menus/LevelFinishUI/score_background.gd" id="3_4lj4l"]
+[ext_resource type="Texture2D" uid="uid://d6r4dw0crej8" path="res://assets/house.png" id="4_nb1nv"]
+[ext_resource type="Texture2D" uid="uid://biscg3y7631g2" path="res://assets/househighlight.png" id="5_otqiw"]
+[ext_resource type="Script" uid="uid://cnl1hwsn7lrgp" path="res://menus/LevelFinishUI/return_to_menu.gd" id="6_fuwn3"]
+[ext_resource type="Texture2D" uid="uid://dnmiunuvrag87" path="res://assets/arrow.png" id="7_ov87u"]
+[ext_resource type="Texture2D" uid="uid://cvvii5n1w08qn" path="res://assets/arrowhighlight.png" id="8_up3dh"]
+[ext_resource type="Theme" uid="uid://4ney4y7vfk1q" path="res://theme.tres" id="9_4h4mq"]
+[ext_resource type="Script" uid="uid://dfy2vp503gxab" path="res://menus/LevelFinishUI/level_completed.gd" id="10_g2u2k"]
+[ext_resource type="Script" uid="uid://c66d1jsi8mpms" path="res://menus/LevelFinishUI/score.gd" id="11_juj26"]
 
 [node name="LevelFinishUI" type="CanvasLayer"]
 layer = 2
 follow_viewport_enabled = true
-script = ExtResource("1_byj2t")
+script = ExtResource("1_6msl1")
 
 [node name="ScoreBackground" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -29,8 +29,8 @@ offset_right = -662.0
 offset_bottom = 384.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_f5ava")
-script = ExtResource("2_byj2t")
+texture = ExtResource("2_cwesl")
+script = ExtResource("3_4lj4l")
 
 [node name="ReturnToMenu" type="TextureButton" parent="ScoreBackground"]
 layout_mode = 0
@@ -39,10 +39,10 @@ offset_top = 290.0
 offset_right = 305.0
 offset_bottom = 490.0
 scale = Vector2(0.64, 0.64)
-texture_normal = ExtResource("4_5cfwx")
-texture_pressed = ExtResource("5_6glrl")
-texture_hover = ExtResource("5_6glrl")
-script = ExtResource("4_aj2gs")
+texture_normal = ExtResource("4_nb1nv")
+texture_pressed = ExtResource("5_otqiw")
+texture_hover = ExtResource("5_otqiw")
+script = ExtResource("6_fuwn3")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -53,9 +53,9 @@ offset_top = 288.0
 offset_right = 488.0
 offset_bottom = 416.0
 scale = Vector2(0.64, 0.64)
-texture_normal = ExtResource("7_aha8w")
-texture_pressed = ExtResource("8_vl52c")
-texture_hover = ExtResource("8_vl52c")
+texture_normal = ExtResource("7_ov87u")
+texture_pressed = ExtResource("8_up3dh")
+texture_hover = ExtResource("8_up3dh")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -65,11 +65,11 @@ offset_left = 16.0
 offset_top = -16.0
 offset_right = 576.0
 offset_bottom = 112.0
-theme = ExtResource("9_aha8w")
+theme = ExtResource("9_4h4mq")
 theme_override_font_sizes/normal_font_size = 96
 text = "Level Complete"
 horizontal_alignment = 1
-script = ExtResource("3_aj2gs")
+script = ExtResource("10_g2u2k")
 metadata/_edit_group_ = true
 
 [node name="Score" type="RichTextLabel" parent="ScoreBackground"]
@@ -78,9 +78,9 @@ offset_left = 241.0
 offset_top = 102.0
 offset_right = 350.0
 offset_bottom = 143.0
-theme = ExtResource("9_aha8w")
+theme = ExtResource("9_4h4mq")
 horizontal_alignment = 1
-script = ExtResource("4_w3r4p")
+script = ExtResource("11_juj26")
 metadata/_edit_group_ = true
 
 [connection signal="level_one_complete" from="." to="ScoreBackground" method="_on_level_finish_ui_level_one_complete"]

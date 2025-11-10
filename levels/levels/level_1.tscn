@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://bdn1j57uv1wnh"]
 
 [ext_resource type="Script" path="res://levels/level_1/level.gd" id="1_x1fhx"]
-[ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_m8r0g"]
+[ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://menus/resources/item_stack.gd" id="2_m8r0g"]
 [ext_resource type="Script" uid="uid://drjgkm8r1ypcg" path="res://items/basic_item.gd" id="3_7r1bk"]
 [ext_resource type="Resource" uid="uid://b6wciwk4136me" path="res://items/blue_potion.tres" id="4_lso4x"]
 [ext_resource type="Resource" uid="uid://bc2wyf85lloq4" path="res://items/red_mace.tres" id="5_7c02u"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="6_dud5q"]
 [ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="7_tj8pf"]
 [ext_resource type="Texture2D" uid="uid://07t0yhbsmgo2" path="res://Backgrounds/background2.png" id="8_usq73"]
-[ext_resource type="PackedScene" uid="uid://buc2wf64kxubv" path="res://menus/LevelFinishUI.tscn" id="9_xjxsu"]
+[ext_resource type="PackedScene" uid="uid://buc2wf64kxubv" path="res://menus/LevelFinishUI/LevelFinishUI.tscn" id="9_xjxsu"]
 
 [sub_resource type="Resource" id="Resource_8jbay"]
 script = ExtResource("2_m8r0g")
