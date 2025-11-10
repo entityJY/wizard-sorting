@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://buc2wf64kxubv"]
+
+[ext_resource type="Script" uid="uid://bkfiqbmdt62ob" path="res://menus/level_finish_ui.gd" id="1_byj2t"]
+[ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_f5ava"]
+[ext_resource type="Script" uid="uid://swuf1fi60t56" path="res://menus/score_background.gd" id="2_byj2t"]
+[ext_resource type="Script" uid="uid://dfy2vp503gxab" path="res://menus/level_completed.gd" id="3_aj2gs"]
+[ext_resource type="Script" uid="uid://c66d1jsi8mpms" path="res://menus/score.gd" id="4_w3r4p"]
+
+[node name="LevelFinishUI" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_byj2t")
+
+[node name="ScoreBackground" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1256.0
+offset_top = 12.0
+offset_right = -662.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f5ava")
+script = ExtResource("2_byj2t")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="ReturnToMenu" type="TextureButton" parent="ScoreBackground"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 290.0
+offset_right = 233.0
+offset_bottom = 418.0
+texture_normal = ExtResource("1_f5ava")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Continue" type="TextureButton" parent="ScoreBackground"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 288.0
+offset_right = 488.0
+offset_bottom = 416.0
+texture_normal = ExtResource("1_f5ava")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="LevelCompleted" type="RichTextLabel" parent="ScoreBackground"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 8.0
+offset_right = 541.0
+offset_bottom = 100.0
+theme_override_font_sizes/normal_font_size = 64
+text = "Level Complete"
+script = ExtResource("3_aj2gs")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Score" type="RichTextLabel" parent="ScoreBackground"]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 102.0
+offset_right = 350.0
+offset_bottom = 143.0
+horizontal_alignment = 1
+script = ExtResource("4_w3r4p")
+metadata/_edit_group_ = true
+
+[connection signal="level_one_complete" from="." to="ScoreBackground" method="_on_level_finish_ui_level_one_complete"]
+[connection signal="level_one_complete" from="." to="ScoreBackground/LevelCompleted" method="_on_level_finish_ui_level_one_complete"]
+[connection signal="level_one_complete" from="." to="ScoreBackground/Score" method="_on_level_finish_ui_level_one_complete"]
