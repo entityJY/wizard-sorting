@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bw3u83unndaf5"]
+[gd_scene load_steps=11 format=3 uid="uid://bw3u83unndaf5"]
 
 [ext_resource type="Script" uid="uid://bs1268iy76com" path="res://menus/main_menu/main_menu.gd" id="1_oic2i"]
 [ext_resource type="Texture2D" uid="uid://cs85t214c5kb1" path="res://Backgrounds/main menu background.png" id="2_8woyc"]
@@ -10,18 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://ddolrd5nfujla" path="res://assets/play button highlighted.png" id="7_d1j5c"]
 [ext_resource type="Texture2D" uid="uid://bb6gssbawou4o" path="res://assets/title.png" id="9_d1j5c"]
 [ext_resource type="Texture2D" uid="uid://dcrww3kie4qd" path="res://assets/main menu illust.png" id="10_pmi7g"]
-[ext_resource type="Script" uid="uid://bxfpnj3uoam55" path="res://menus/main_menu/camera_2d.gd" id="11_d1j5c"]
 
 [node name="main_menu" type="CanvasLayer"]
 follow_viewport_enabled = true
 script = ExtResource("1_oic2i")
 
 [node name="Background" type="TextureRect" parent="."]
-offset_left = -4.0
-offset_top = -185.0
-offset_right = 1976.0
-offset_bottom = 895.0
-scale = Vector2(1.25, 1.25)
+offset_right = 1980.0
+offset_bottom = 1080.0
+scale = Vector2(0.97, 1)
 texture = ExtResource("2_8woyc")
 
 [node name="Endless" type="TextureButton" parent="."]
@@ -40,6 +37,7 @@ rotation = 0.06981317
 texture_normal = ExtResource("3_81su3")
 texture_pressed = ExtResource("4_t7kvd")
 texture_hover = ExtResource("4_t7kvd")
+texture_disabled = ExtResource("3_81su3")
 script = ExtResource("3_2kpsw")
 
 [node name="Start or Continue" type="TextureButton" parent="."]
@@ -58,6 +56,7 @@ rotation = -0.16490144
 texture_normal = ExtResource("6_8woyc")
 texture_pressed = ExtResource("7_d1j5c")
 texture_hover = ExtResource("7_d1j5c")
+texture_disabled = ExtResource("6_8woyc")
 script = ExtResource("3_5nlyh")
 
 [node name="Title" type="TextureRect" parent="."]
@@ -74,11 +73,7 @@ offset_right = 2148.0
 offset_bottom = 1463.0
 texture = ExtResource("10_pmi7g")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-217, 540)
-limit_left = 0
-script = ExtResource("11_d1j5c")
-
+[connection signal="pack_up" from="." to="." method="_on_pack_up"]
 [connection signal="pack_up" from="." to="Endless" method="_on_main_menu_pack_up"]
 [connection signal="pack_up" from="." to="Start or Continue" method="_on_main_menu_pack_up"]
 [connection signal="pressed" from="Endless" to="Endless" method="_on_pressed"]

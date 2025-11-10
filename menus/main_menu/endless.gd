@@ -14,11 +14,12 @@ func _on_pressed() -> void:
 	
 
 func _on_main_menu_pack_up() -> void:
+	disabled = true
 	await get_tree().create_timer(0.5).timeout
 	for i in range(20):
-		position.y -= i/2
-		await get_tree().create_timer(0.015).timeout
-	for i in range(40):
-		position.y += i*3
-		await get_tree().create_timer(0.015).timeout
+		position = position.move_toward(Vector2(300, 675), 10 - float(i))
+		await get_tree().create_timer(0.02).timeout
+	for i in range(20):
+		position = position.move_toward(Vector2(300, 1200), 10 + float(i))
+		await get_tree().create_timer(0.02).timeout
 	

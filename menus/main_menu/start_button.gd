@@ -14,10 +14,11 @@ func _on_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/basic_level.tscn")
 	
 func _on_main_menu_pack_up() -> void:
+	disabled = true
 	for i in range(20):
-		position.y -= i/2
-		await get_tree().create_timer(0.015).timeout
+		position = position.move_toward(Vector2(84, 489), 10 - float(i))
+		await get_tree().create_timer(0.02).timeout
 	for i in range(40):
-		position.y += i*3
-		await get_tree().create_timer(0.015).timeout
+		position = position.move_toward(Vector2(84, 1200), 10 + float(i))
+		await get_tree().create_timer(0.02).timeout
 		
