@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c66d1jsi8mpms" path="res://menus/score.gd" id="4_w3r4p"]
 
 [node name="LevelFinishUI" type="CanvasLayer"]
+layer = 2
 follow_viewport_enabled = true
 script = ExtResource("1_byj2t")
 
