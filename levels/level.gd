@@ -1,4 +1,5 @@
 extends Node2D
+class_name Level
 
 
 @export var stacks: Array[ItemStack]
