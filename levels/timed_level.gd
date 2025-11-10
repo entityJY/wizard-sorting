@@ -37,10 +37,10 @@ func level_timer_timeout() -> void:
 	for item in right_stack:
 		item.add_attached_target(Vector2(right_target.x, $RightStack.global_position.y + 700))
 	calculate_score()
-	print("Level Complete! Total Score: ")
-	print(total_score)
 	level_complete.emit(total_score, false)
 
 func on_level_end(_total_score, _completed_stacks) -> void:
 	level_timer.stop()
 	level_started = TimedLevelStage.FINISHED
+	print("Level Complete! Total Score: ")
+	print(total_score)

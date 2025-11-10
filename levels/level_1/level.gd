@@ -27,6 +27,7 @@ var start_next_stack = true
 
 func _ready():
 	start_stack()
+	level_complete.connect(on_level_end)
 
 func _process(_delta):
 
@@ -192,5 +193,8 @@ func _on_stack_timer_timeout():
 		start_stack()
 	else:
 		level_complete.emit(total_score, true)
-		print("Level Complete! Total Score: ")
-		print(total_score)
+
+
+func on_level_end(_total_score, _completed_stacks):
+	print("Level Complete! Total Score: ")
+	print(total_score)
