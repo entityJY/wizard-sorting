@@ -1,5 +1,12 @@
 extends TextureButton
+var original_position = Vector2(300, 775)
 #level select
+
+func _process(delta: float) -> void:
+	if  original_position == position:
+		original_position = Vector2(300,775)
+		original_position += Vector2(randi_range(-25, 25), randi_range(-25, 25))
+	position = position.move_toward(original_position, delta * 5)
 
 
 func _on_pressed() -> void:

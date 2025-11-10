@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://buc2wf64kxubv"]
+[gd_scene load_steps=12 format=3 uid="uid://buc2wf64kxubv"]
 
 [ext_resource type="Script" uid="uid://bkfiqbmdt62ob" path="res://menus/level_finish_ui.gd" id="1_byj2t"]
 [ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_f5ava"]
@@ -10,10 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://biscg3y7631g2" path="res://assets/househighlight.png" id="5_6glrl"]
 [ext_resource type="Texture2D" uid="uid://dnmiunuvrag87" path="res://assets/arrow.png" id="7_aha8w"]
 [ext_resource type="Texture2D" uid="uid://cvvii5n1w08qn" path="res://assets/arrowhighlight.png" id="8_vl52c"]
-[ext_resource type="FontFile" uid="uid://c7qmc2u6d2sl7" path="res://assets/BricklayDemoRegular.ttf" id="9_kyti5"]
-
-[sub_resource type="Theme" id="Theme_4e6r3"]
-default_font = ExtResource("9_kyti5")
+[ext_resource type="Theme" uid="uid://4ney4y7vfk1q" path="res://theme.tres" id="9_aha8w"]
 
 [node name="LevelFinishUI" type="CanvasLayer"]
 layer = 2
@@ -68,7 +65,7 @@ offset_left = 16.0
 offset_top = -16.0
 offset_right = 576.0
 offset_bottom = 112.0
-theme = SubResource("Theme_4e6r3")
+theme = ExtResource("9_aha8w")
 theme_override_font_sizes/normal_font_size = 96
 text = "Level Complete"
 horizontal_alignment = 1
@@ -81,6 +78,7 @@ offset_left = 241.0
 offset_top = 102.0
 offset_right = 350.0
 offset_bottom = 143.0
+theme = ExtResource("9_aha8w")
 horizontal_alignment = 1
 script = ExtResource("4_w3r4p")
 metadata/_edit_group_ = true
