@@ -33,16 +33,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -924.5
-offset_top = 46.0
-offset_right = -227.5
-offset_bottom = 258.0
+offset_left = -837.5
+offset_top = 196.0
+offset_right = -132.5
+offset_bottom = 420.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("3_81su3")
 texture_pressed = ExtResource("4_t7kvd")
 texture_hover = ExtResource("4_t7kvd")
 script = ExtResource("3_2kpsw")
+metadata/_edit_group_ = true
 
 [node name="Start or Continue" type="TextureButton" parent="."]
 anchors_preset = 8
@@ -50,16 +51,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -90.0
-offset_right = -512.0
-offset_bottom = 38.0
+offset_left = -882.0
+offset_top = -19.0
+offset_right = -88.0
+offset_bottom = 279.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("6_8woyc")
 texture_pressed = ExtResource("7_d1j5c")
 texture_hover = ExtResource("7_d1j5c")
 script = ExtResource("3_5nlyh")
+metadata/_edit_group_ = true
 
 [connection signal="pack_up" from="." to="Endless" method="_on_main_menu_pack_up"]
 [connection signal="pack_up" from="." to="Start or Continue" method="_on_main_menu_pack_up"]

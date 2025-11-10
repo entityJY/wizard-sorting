@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://4ney4y7vfk1q"]
+
+[ext_resource type="FontFile" uid="uid://c7qmc2u6d2sl7" path="res://assets/BricklayDemoRegular.ttf" id="1_yrtyg"]
+
+[resource]
+default_font = ExtResource("1_yrtyg")
