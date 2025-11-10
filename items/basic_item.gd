@@ -6,6 +6,7 @@ enum Attributes {
 	CUT,
 	BLUNT,
 	PIERCE,
+	WEAPON,
 	POTION,
 	BLUE,
 	RED,
