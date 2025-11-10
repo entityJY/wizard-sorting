@@ -1,14 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b54cdbp50nnkh"]
+[gd_scene load_steps=3 format=3 uid="uid://b54cdbp50nnkh"]
 
-[ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_0i0ci"]
+[ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_8dk0w"]
+[ext_resource type="Script" uid="uid://yed7lum27sjp" path="res://menus/settings/setting_one.gd" id="2_n0yi0"]
 
-[node name="level_select" type="CanvasLayer"]
+[node name="settings" type="CanvasLayer"]
 
 [node name="Background" type="TextureRect" parent="."]
 visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_0i0ci")
+texture = ExtResource("1_8dk0w")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 8
@@ -27,6 +28,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 text = "Level"
+script = ExtResource("2_n0yi0")
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -57,3 +59,5 @@ text = "Level"
 layout_mode = 2
 size_flags_vertical = 3
 text = "Level"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_pressed"]
