@@ -35,5 +35,4 @@ func set_target_positions(targets: Array[Vector2]) -> void:
 
 # creates a timer for use with timed effects
 func _start_effect_timer(duration: float, effect: TimedEffect):
-	var timer = get_tree().create_timer(duration)
-	timer.timeout.connect(effect.timer_end)
+	get_tree().create_timer(duration).timeout.connect(effect.timer_end)
