@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://drjgkm8r1ypcg" path="res://items/basic_item.gd" id="2_45440"]
 [ext_resource type="Resource" uid="uid://dxgdjwptdx0cn" path="res://items/blue_knife.tres" id="3_j48du"]
 [ext_resource type="Resource" uid="uid://bhrgju2sfgtru" path="res://items/knife.tres" id="4_8jbay"]
-[ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="5_8jbay"]
+[ext_resource type="Script" path="res://resources/item_stack.gd" id="5_8jbay"]
 [ext_resource type="Resource" uid="uid://cxwjyucgeju8o" path="res://items/hammer.tres" id="6_1ow6f"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="6_mxc8w"]
 [ext_resource type="Resource" uid="uid://cdxtiijwx4pfu" path="res://items/red_potion.tres" id="7_7rikf"]
