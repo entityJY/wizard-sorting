@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://buc2wf64kxubv"]
+[gd_scene load_steps=8 format=3 uid="uid://buc2wf64kxubv"]
 
 [ext_resource type="Script" uid="uid://bkfiqbmdt62ob" path="res://menus/level_finish_ui.gd" id="1_byj2t"]
 [ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_f5ava"]
 [ext_resource type="Script" uid="uid://swuf1fi60t56" path="res://menus/score_background.gd" id="2_byj2t"]
 [ext_resource type="Script" uid="uid://dfy2vp503gxab" path="res://menus/level_completed.gd" id="3_aj2gs"]
 [ext_resource type="Script" uid="uid://cnl1hwsn7lrgp" path="res://menus/return_to_menu.gd" id="4_aj2gs"]
+[ext_resource type="Texture2D" uid="uid://d1pua3jlr6ujc" path="res://assets/button.png" id="4_nd26f"]
 [ext_resource type="Script" uid="uid://c66d1jsi8mpms" path="res://menus/score.gd" id="4_w3r4p"]
 
 [node name="LevelFinishUI" type="CanvasLayer"]
@@ -33,9 +34,10 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_left = 105.0
 offset_top = 290.0
-offset_right = 233.0
-offset_bottom = 418.0
-texture_normal = ExtResource("1_f5ava")
+offset_right = 305.0
+offset_bottom = 490.0
+scale = Vector2(0.64, 0.64)
+texture_normal = ExtResource("4_nd26f")
 script = ExtResource("4_aj2gs")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -46,7 +48,8 @@ offset_left = 360.0
 offset_top = 288.0
 offset_right = 488.0
 offset_bottom = 416.0
-texture_normal = ExtResource("1_f5ava")
+scale = Vector2(0.64, 0.64)
+texture_normal = ExtResource("4_nd26f")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 

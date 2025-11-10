@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bw3u83unndaf5"]
+[gd_scene load_steps=9 format=3 uid="uid://bw3u83unndaf5"]
 
 [ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_6qgcp"]
 [ext_resource type="Script" uid="uid://bs1268iy76com" path="res://menus/main_menu/main_menu.gd" id="1_oic2i"]
-[ext_resource type="Script" uid="uid://dlw422wiaxk0r" path="res://menus/main_menu/settings.gd" id="2_2kpsw"]
 [ext_resource type="Script" uid="uid://ci2v720grhjgh" path="res://menus/main_menu/endless.gd" id="3_2kpsw"]
 [ext_resource type="Script" uid="uid://cimc6mhhppooa" path="res://menus/main_menu/start_button.gd" id="3_5nlyh"]
+[ext_resource type="Texture2D" uid="uid://dau4vnwrcwy2m" path="res://assets/endless button.png" id="3_81su3"]
+[ext_resource type="Texture2D" uid="uid://c6iniym555p0g" path="res://assets/endless button highlighted.png" id="4_t7kvd"]
+[ext_resource type="Texture2D" uid="uid://mx5i01db80qy" path="res://assets/play button.png" id="6_8woyc"]
+[ext_resource type="Texture2D" uid="uid://ddolrd5nfujla" path="res://assets/play button highlighted.png" id="7_d1j5c"]
 
 [node name="main_menu" type="CanvasLayer"]
 script = ExtResource("1_oic2i")
@@ -24,34 +27,21 @@ theme_override_font_sizes/normal_font_size = 96
 text = "WIZARD SORTING"
 horizontal_alignment = 1
 
-[node name="Settings" type="TextureButton" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = 210.0
-offset_right = -512.0
-offset_bottom = 338.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("1_6qgcp")
-script = ExtResource("2_2kpsw")
-
 [node name="Endless" type="TextureButton" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = 60.0
-offset_right = -512.0
-offset_bottom = 188.0
+offset_left = -924.5
+offset_top = 46.0
+offset_right = -227.5
+offset_bottom = 258.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_6qgcp")
+texture_normal = ExtResource("3_81su3")
+texture_pressed = ExtResource("4_t7kvd")
+texture_hover = ExtResource("4_t7kvd")
 script = ExtResource("3_2kpsw")
 
 [node name="Start or Continue" type="TextureButton" parent="."]
@@ -66,12 +56,12 @@ offset_right = -512.0
 offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_6qgcp")
+texture_normal = ExtResource("6_8woyc")
+texture_pressed = ExtResource("7_d1j5c")
+texture_hover = ExtResource("7_d1j5c")
 script = ExtResource("3_5nlyh")
 
-[connection signal="pack_up" from="." to="Settings" method="_on_main_menu_pack_up"]
 [connection signal="pack_up" from="." to="Endless" method="_on_main_menu_pack_up"]
 [connection signal="pack_up" from="." to="Start or Continue" method="_on_main_menu_pack_up"]
-[connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
 [connection signal="pressed" from="Endless" to="Endless" method="_on_pressed"]
 [connection signal="pressed" from="Start or Continue" to="Start or Continue" method="_on_pressed"]

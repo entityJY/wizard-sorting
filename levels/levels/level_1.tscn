@@ -1,31 +1,23 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdn1j57uv1wnh"]
+[gd_scene load_steps=11 format=3 uid="uid://bdn1j57uv1wnh"]
 
-[ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/basic_level.gd" id="1_n46q3"]
-[ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="2_btoec"]
-[ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_x1fhx"]
-[ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="3_gwceb"]
-[ext_resource type="Script" uid="uid://drjgkm8r1ypcg" path="res://items/basic_item.gd" id="3_m8r0g"]
-[ext_resource type="Resource" uid="uid://dxgdjwptdx0cn" path="res://items/blue_knife.tres" id="4_7r1bk"]
-[ext_resource type="Texture2D" uid="uid://07t0yhbsmgo2" path="res://Backgrounds/background2.png" id="4_l53as"]
-[ext_resource type="PackedScene" uid="uid://buc2wf64kxubv" path="res://menus/LevelFinishUI.tscn" id="5_3sk1a"]
-[ext_resource type="Resource" uid="uid://cdxtiijwx4pfu" path="res://items/red_potion.tres" id="5_lso4x"]
-[ext_resource type="Resource" uid="uid://b6wciwk4136me" path="res://items/blue_potion.tres" id="6_m8r0g"]
+[ext_resource type="Script" path="res://levels/level_1/level.gd" id="1_x1fhx"]
+[ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_m8r0g"]
+[ext_resource type="Script" uid="uid://drjgkm8r1ypcg" path="res://items/basic_item.gd" id="3_7r1bk"]
+[ext_resource type="Resource" uid="uid://b6wciwk4136me" path="res://items/blue_potion.tres" id="4_lso4x"]
+[ext_resource type="Resource" uid="uid://bc2wyf85lloq4" path="res://items/red_mace.tres" id="5_7c02u"]
+[ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="6_dud5q"]
+[ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="7_tj8pf"]
+[ext_resource type="Texture2D" uid="uid://07t0yhbsmgo2" path="res://Backgrounds/background2.png" id="8_usq73"]
+[ext_resource type="PackedScene" uid="uid://buc2wf64kxubv" path="res://menus/LevelFinishUI.tscn" id="9_xjxsu"]
 
-[sub_resource type="Resource" id="Resource_7c02u"]
-script = ExtResource("2_x1fhx")
-item_stack = Array[ExtResource("3_m8r0g")]([ExtResource("4_7r1bk"), ExtResource("4_7r1bk"), ExtResource("4_7r1bk"), ExtResource("5_lso4x"), ExtResource("5_lso4x"), ExtResource("5_lso4x")])
-randomized_order = true
+[sub_resource type="Resource" id="Resource_8jbay"]
+script = ExtResource("2_m8r0g")
+item_stack = Array[ExtResource("3_7r1bk")]([ExtResource("4_lso4x"), ExtResource("4_lso4x"), ExtResource("5_7c02u"), ExtResource("5_7c02u")])
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
-[sub_resource type="Resource" id="Resource_7r1bk"]
-script = ExtResource("2_x1fhx")
-item_stack = Array[ExtResource("3_m8r0g")]([ExtResource("6_m8r0g"), ExtResource("6_m8r0g"), ExtResource("6_m8r0g"), ExtResource("4_7r1bk"), ExtResource("4_7r1bk"), ExtResource("4_7r1bk")])
-randomized_order = true
-metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
-
-[node name="Level" type="Node2D"]
-script = ExtResource("1_n46q3")
-stacks = Array[ExtResource("2_x1fhx")]([SubResource("Resource_7c02u"), SubResource("Resource_7r1bk")])
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_x1fhx")
+stacks = Array[ExtResource("2_m8r0g")]([SubResource("Resource_8jbay")])
 
 [node name="ItemStack" type="Node2D" parent="."]
 position = Vector2(-1, 400)
@@ -43,19 +35,19 @@ position = Vector2(431, 300)
 [node name="TableFront" type="Sprite2D" parent="."]
 top_level = true
 position = Vector2(4.5, 394.5)
-texture = ExtResource("2_btoec")
+texture = ExtResource("6_dud5q")
 
 [node name="TableBase" type="Sprite2D" parent="."]
 position = Vector2(4.5, 394.5)
-texture = ExtResource("3_gwceb")
+texture = ExtResource("7_tj8pf")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
-texture = ExtResource("4_l53as")
+texture = ExtResource("8_usq73")
 
-[node name="LevelFinishUI" parent="." instance=ExtResource("5_3sk1a")]
+[node name="LevelFinishUI" parent="." instance=ExtResource("9_xjxsu")]
 
 [connection signal="level_complete" from="." to="LevelFinishUI" method="_on_level_1_level_complete"]
 [connection signal="level_one_complete" from="LevelFinishUI" to="LevelFinishUI" method="_on_level_one_complete"]
