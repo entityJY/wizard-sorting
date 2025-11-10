@@ -7,6 +7,6 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("2_65rus")
-attributes = Array[String](["ranged", "pierce"])
+attributes = Array[int]([2, 3])
 sprite = ExtResource("3_65rus")
 metadata/_custom_type_script = "uid://drjgkm8r1ypcg"

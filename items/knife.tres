@@ -7,5 +7,6 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("2_crodb")
+attributes = Array[int]([0, 3])
 sprite = ExtResource("3_crodb")
 metadata/_custom_type_script = "uid://drjgkm8r1ypcg"

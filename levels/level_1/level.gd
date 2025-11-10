@@ -72,7 +72,7 @@ func _process(_delta):
 		calculate_score()
 
 
-func sort_dict(a: String, b: String, dict: Dictionary):
+func sort_dict(a: int, b: int, dict: Dictionary):
 	return true if dict[a] > dict[b] else false
 
 func calculate_score():
@@ -119,11 +119,12 @@ func calculate_score():
 		# actual scoring
 		@warning_ignore("integer_division")
 		score = (len(left_stack) + len(right_stack)) / 2
+		print(score)
 		for item in left_stack:
-			if not left_keys[0] in item.attributes or not Item.Attributes.DISCARD in item.attributes:
+			if not left_keys[0] in item.attributes or Item.Attributes.DISCARD in item.attributes:
 				score -= 1
 		for item in right_stack:
-			if not right_keys[0] in item.attributes or not Item.Attributes.DISCARD in item.attributes:
+			if not right_keys[0] in item.attributes or Item.Attributes.DISCARD in item.attributes:
 				score -= 1
 		for item in discard_stack:
 			if Item.Attributes.DISCARD in item.attributes:
