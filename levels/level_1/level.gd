@@ -119,7 +119,6 @@ func calculate_score():
 		# actual scoring
 		@warning_ignore("integer_division")
 		score = (len(left_stack) + len(right_stack)) / 2
-		print(score)
 		for item in left_stack:
 			if not left_keys[0] in item.attributes or Item.Attributes.DISCARD in item.attributes:
 				score -= 1
