@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://buc2wf64kxubv"]
+[gd_scene load_steps=7 format=3 uid="uid://buc2wf64kxubv"]
 
 [ext_resource type="Script" uid="uid://bkfiqbmdt62ob" path="res://menus/level_finish_ui.gd" id="1_byj2t"]
 [ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_f5ava"]
 [ext_resource type="Script" uid="uid://swuf1fi60t56" path="res://menus/score_background.gd" id="2_byj2t"]
 [ext_resource type="Script" uid="uid://dfy2vp503gxab" path="res://menus/level_completed.gd" id="3_aj2gs"]
+[ext_resource type="Script" uid="uid://cnl1hwsn7lrgp" path="res://menus/return_to_menu.gd" id="4_aj2gs"]
 [ext_resource type="Script" uid="uid://c66d1jsi8mpms" path="res://menus/score.gd" id="4_w3r4p"]
 
 [node name="LevelFinishUI" type="CanvasLayer"]
@@ -35,6 +36,7 @@ offset_top = 290.0
 offset_right = 233.0
 offset_bottom = 418.0
 texture_normal = ExtResource("1_f5ava")
+script = ExtResource("4_aj2gs")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -73,3 +75,4 @@ metadata/_edit_group_ = true
 [connection signal="level_one_complete" from="." to="ScoreBackground" method="_on_level_finish_ui_level_one_complete"]
 [connection signal="level_one_complete" from="." to="ScoreBackground/LevelCompleted" method="_on_level_finish_ui_level_one_complete"]
 [connection signal="level_one_complete" from="." to="ScoreBackground/Score" method="_on_level_finish_ui_level_one_complete"]
+[connection signal="pressed" from="ScoreBackground/ReturnToMenu" to="ScoreBackground/ReturnToMenu" method="_on_pressed"]
