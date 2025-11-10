@@ -13,17 +13,20 @@ var user_effects: UserEffects = UserEffects.new()
 var left_target: Vector2
 var right_target: Vector2
 
-@export var stack_timer: Timer
-
 var between_stacks: bool = false
 
 signal stack_sorted(score: int)
 var total_score: int = 0
-signal level_complete(total_score: int)
+signal level_complete(total_score: int, completed_all_stacks: bool)
+
+
+var TIME_BETWEEN_STACKS = .25
+
+var start_next_stack = true
 
 
 func _ready():
-	start_level()
+	start_stack()
 
 func _process(_delta):
 
@@ -126,13 +129,14 @@ func calculate_score():
 			if Item.Attributes.DISCARD in item.attributes:
 				score += 1
 	
-	stack_timer.start()
+	if start_next_stack:
+		get_tree().create_timer(TIME_BETWEEN_STACKS).timeout.connect(_on_stack_timer_timeout)
 	total_score += score
 	stack_sorted.emit(score)
 	between_stacks = true
 
 
-func start_level():
+func start_stack():
 	between_stacks = false
 
 	# reset target_positions
@@ -185,8 +189,8 @@ func _on_stack_timer_timeout():
 	
 	# start next stack or complete level
 	if not stacks.is_empty():
-		start_level()
+		start_stack()
 	else:
-		level_complete.emit(total_score)
+		level_complete.emit(total_score, true)
 		print("Level Complete! Total Score: ")
 		print(total_score)

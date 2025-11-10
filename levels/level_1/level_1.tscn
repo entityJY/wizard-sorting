@@ -24,14 +24,9 @@ script = ExtResource("5_8jbay")
 item_stack = Array[ExtResource("2_45440")]([SubResource("Resource_qbdb0"), ExtResource("3_j48du"), ExtResource("9_lwxes"), ExtResource("9_lwxes")])
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
-[node name="Level1" type="Node2D" node_paths=PackedStringArray("stack_timer")]
+[node name="Level1" type="Node2D"]
 script = ExtResource("1_k1ttk")
-stacks = Array[ExtResource("5_8jbay")]([SubResource("Resource_hyp3v")])
-stack_timer = NodePath("StackTimer")
-
-[node name="StackTimer" type="Timer" parent="."]
-wait_time = 0.25
-one_shot = true
+stacks = Array[ExtResource("5_8jbay")]([SubResource("Resource_hyp3v"), SubResource("Resource_hyp3v")])
 
 [node name="ItemStack" type="Node2D" parent="."]
 position = Vector2(-1, 400)
@@ -59,5 +54,3 @@ texture = ExtResource("7_j48du")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
 texture = ExtResource("8_j48du")
-
-[connection signal="timeout" from="StackTimer" to="." method="_on_stack_timer_timeout"]
