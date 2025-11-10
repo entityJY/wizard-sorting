@@ -56,6 +56,7 @@ position = Vector2(4.5, 394.5)
 texture = ExtResource("10_js815")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
 texture = ExtResource("11_ghv7w")
