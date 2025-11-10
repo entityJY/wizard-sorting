@@ -24,10 +24,8 @@ script = ExtResource("2_jnnsc")
 item_stack = Array[ExtResource("3_ojoix")]([SubResource("Resource_qbdb0"), ExtResource("7_ktmi4"), ExtResource("8_53bok"), ExtResource("8_53bok")])
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
-[node name="Level1" type="Node2D" node_paths=PackedStringArray("level_timer")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer")]
 script = ExtResource("1_u2lc4")
-level_time = 5.0
-setup_time = 2.0
 level_timer = NodePath("LevelTimer")
 stacks = Array[ExtResource("2_jnnsc")]([SubResource("Resource_hyp3v"), SubResource("Resource_hyp3v")])
 
