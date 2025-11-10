@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Confusion" load_steps=2 format=3 uid="uid://ctdfdelofy4sm"]
+
+[ext_resource type="Script" uid="uid://cvvj235ysvrmh" path="res://resources/effects/confusion.gd" id="1_bjtea"]
+
+[resource]
+script = ExtResource("1_bjtea")
+duration = 1
+metadata/_custom_type_script = "uid://cvvj235ysvrmh"

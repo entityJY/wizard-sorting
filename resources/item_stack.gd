@@ -10,7 +10,7 @@ func _init(items: Array[Item] = [], p_randomized_order = false):
     if randomized_order:
         item_stack.shuffle()
 
-func pop_front() -> Variant:
+func pop_front() -> Item:
     return item_stack.pop_front()
 
 func is_empty() -> bool:

@@ -7,6 +7,5 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("2_dyqxh")
-attributes = Array[String](["potion", "blue"])
 sprite = ExtResource("3_dyqxh")
 metadata/_custom_type_script = "uid://drjgkm8r1ypcg"
