@@ -165,7 +165,7 @@ func start_level():
 		for effect in item.effects:
 			effect.set_user_effects_ref(user_effects)
 			if effect is TimedEffect:
-				effect.create_timer.connect(scene.start_effect_timer)
+				effect.create_timer.connect(scene._start_effect_timer)
 
 		prev_height = item.sprite.get_height()
 	

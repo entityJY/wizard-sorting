@@ -29,5 +29,6 @@ func on_enter_active_sort():
 	if target == effect_target.ACTIVE:
 		effect()
 
+## Effect to run
 func effect():
 	pass

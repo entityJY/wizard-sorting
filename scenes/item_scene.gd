@@ -17,6 +17,7 @@ func _process(delta):
 		target_positions.pop_front()
 
 
+## Calculates a new path based on a target node
 func calculate_new_path(target: Vector2) -> void:
 	if target.y > global_position.y:
 		add_target_position(Vector2(150 * sign(target.x), global_position.y))
@@ -24,12 +25,15 @@ func calculate_new_path(target: Vector2) -> void:
 		add_target_position(Vector2(200 * sign(target.x), target.y))
 	add_target_position(target)
 
+## Adds a target to the path of node
 func add_target_position(target: Vector2) -> void:
 	target_positions.append(target)
 
+## Sets the path of the Node
 func set_target_positions(targets: Array[Vector2]) -> void:
 	target_positions = targets
 
-func start_effect_timer(duration: float, effect: TimedEffect):
+# creates a timer for use with timed effects
+func _start_effect_timer(duration: float, effect: TimedEffect):
 	var timer = get_tree().create_timer(duration)
 	timer.timeout.connect(effect.timer_end)
