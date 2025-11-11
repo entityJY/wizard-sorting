@@ -1,5 +1,10 @@
 extends Node2D
 class_name Level
+@onready var move_sfx: AudioStreamPlayer = $move_sfx
+@onready var move_sfx_2: AudioStreamPlayer = $Music/move_sfx2
+@onready var delete_item_sfx_2: AudioStreamPlayer = $Music/delete_item_sfx2
+@onready var button_press_sfx_2: AudioStreamPlayer = $Music/button_press_sfx2
+@onready var finish_level_sfx_2: AudioStreamPlayer = $Music/finish_level_sfx2
 
 
 @export var stacks: Array[ItemStack]
@@ -43,6 +48,7 @@ func _process(_delta):
 		right = Input.is_action_just_pressed("left")
 	
 	if left:
+		$Music/move_sfx2.play()
 		var item = unsorted_stack.pop_front()
 		if item:
 			item.on_sort()
@@ -52,6 +58,7 @@ func _process(_delta):
 			left_stack.append(item)
 	
 	if right:
+		$Music/move_sfx2.play()
 		var item = unsorted_stack.pop_front()
 		if item:
 			item.on_sort()
@@ -61,6 +68,7 @@ func _process(_delta):
 			right_stack.append(item)
 	
 	if down:
+		$Music/delete_item_sfx2.play()
 		var item = unsorted_stack.pop_front()
 		if item:
 			item.on_discard()
@@ -205,5 +213,6 @@ func _on_stack_timer_timeout():
 
 
 func on_level_end(_total_score, _completed_stacks):
+	$Music/finish_level_sfx2.play()
 	print("Level Complete! Total Score: ")
 	print(total_score)
