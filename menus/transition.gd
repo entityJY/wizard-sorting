@@ -9,7 +9,7 @@ func transition(placement: int):
 	elif placement == 1:
 		$TextureRect.set_position(Vector2(-350, 0))
 		for i in range(40):
-			$TextureRect.position = $TextureRect.position.move_toward(Vector2(-2620, 0), 52)
+			$TextureRect.position = $TextureRect.position.move_toward(Vector2(-2620, 0), 60)
 			await get_tree().create_timer(0.02).timeout
 
 
