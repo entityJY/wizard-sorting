@@ -19,6 +19,7 @@
 [sub_resource type="Resource" id="Resource_8jbay"]
 script = ExtResource("2_m8r0g")
 item_stack = Array[ExtResource("3_7r1bk")]([ExtResource("4_lso4x"), ExtResource("4_lso4x"), ExtResource("5_7c02u"), ExtResource("5_7c02u")])
+randomized_order = true
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8r0g"]
