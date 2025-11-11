@@ -79,7 +79,6 @@ func start_stack():
 func add_time(score: int) -> void:
 	var extra_time = float(score)
 	level_timer.start(level_timer.time_left + extra_time)
-	print(level_timer.time_left)
 
 func start_level() -> void:
 	start_stack()
