@@ -78,7 +78,6 @@ offset_left = 241.0
 offset_top = 102.0
 offset_right = 350.0
 offset_bottom = 143.0
-theme = ExtResource("9_4h4mq")
 horizontal_alignment = 1
 script = ExtResource("11_juj26")
 metadata/_edit_group_ = true

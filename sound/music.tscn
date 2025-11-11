@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b40ct6h1ce1pt" path="res://sound/powerUp.wav" id="3_aji4n"]
 [ext_resource type="AudioStream" uid="uid://cfivq5qa21jj0" path="res://sound/background-music-soft-calm-404429.mp3" id="5_6c74v"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Music" type="Node2D"]
 
 [node name="delete_item_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_pk0wj")
