@@ -13,8 +13,9 @@ func _init(sprite: Texture2D):
 
 func _process(delta):
 	global_position = global_position.lerp(target_positions[0], SPEED*delta)
-	if (global_position-target_positions[0]).length() < dis_for_complete and len(target_positions) > 1:
-		target_positions.pop_front()
+	if (global_position-target_positions[0]).length() < dis_for_complete:
+		if len(target_positions) > 1:
+			target_positions.pop_front()
 
 
 ## Calculates a new path based on a target node
