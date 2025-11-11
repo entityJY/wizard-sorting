@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Confusion" load_steps=2 format=3 uid="uid://ctdfdelofy4sm"]
 
-[ext_resource type="Script" uid="uid://cvvj235ysvrmh" path="res://resources/effects/confusion.gd" id="1_bjtea"]
+[ext_resource type="Script" uid="uid://cvvj235ysvrmh" path="res://effects/item_effects/confusion.gd" id="1_bjtea"]
 
 [resource]
 script = ExtResource("1_bjtea")
