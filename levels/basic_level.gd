@@ -167,6 +167,8 @@ func start_stack():
 		scene.global_position.y -= 2000
 		scene.set_target_positions([start_position])
 		item.attached_node = scene
+		if item.effects and item.effects[0] and item.effects[0].shader:
+			scene.material = item.effects[0].shader
 		# create timers for TimedEffects
 		for effect in item.effects:
 			effect.set_user_effects_ref(user_effects)

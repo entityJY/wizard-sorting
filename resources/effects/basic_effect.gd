@@ -10,6 +10,9 @@ enum effect_target {
 @export var target: effect_target
 var user_effects: UserEffects = null
 
+## Shader to apply to item
+@export var shader: ShaderMaterial
+
 
 func set_user_effects_ref(p_user_effects: UserEffects):
 	user_effects = p_user_effects

@@ -4,3 +4,6 @@
 
 [resource]
 shader = ExtResource("1_a2dft")
+shader_parameter/outline_thickness = 8.0
+shader_parameter/anti_alias_amount = 1.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
