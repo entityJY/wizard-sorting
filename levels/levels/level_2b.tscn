@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dsihh7nrvb3c0"]
+[gd_scene load_steps=26 format=3 uid="uid://dsihh7nrvb3c0"]
 
 [ext_resource type="Script" uid="uid://bgjq2kb615dxg" path="res://levels/timed_level.gd" id="1_dgoy4"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_cah7x"]
@@ -10,10 +10,10 @@
 [ext_resource type="Resource" uid="uid://dxgdjwptdx0cn" path="res://items/blue_knife.tres" id="8_7kn0h"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="9_pdfws"]
 [ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="10_ef5ck"]
-[ext_resource type="Texture2D" uid="uid://07t0yhbsmgo2" path="res://Backgrounds/background2.png" id="11_0qbk7"]
 [ext_resource type="PackedScene" uid="uid://buc2wf64kxubv" path="res://menus/LevelFinishUI/LevelFinishUI.tscn" id="12_bitus"]
 [ext_resource type="PackedScene" uid="uid://bsl7r4j1kwnq4" path="res://menus/timer/timer.tscn" id="13_cah7x"]
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="14_2h30h"]
+[ext_resource type="Texture2D" uid="uid://c38yn3aogn6nw" path="res://Backgrounds/background_sheets/hearth_animated.png" id="14_tpury"]
 
 [sub_resource type="Resource" id="Resource_hevaq"]
 script = ExtResource("2_cah7x")
@@ -38,6 +38,56 @@ script = ExtResource("2_cah7x")
 item_stack = Array[ExtResource("3_2h30h")]([ExtResource("5_bu05y"), ExtResource("5_bu05y"), ExtResource("8_7kn0h"), ExtResource("6_xv50g"), ExtResource("4_tpury")])
 randomized_order = true
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu05y"]
+atlas = ExtResource("14_tpury")
+region = Rect2(0, 0, 1980, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv50g"]
+atlas = ExtResource("14_tpury")
+region = Rect2(1980, 0, 1980, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61uui"]
+atlas = ExtResource("14_tpury")
+region = Rect2(3960, 0, 1980, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kn0h"]
+atlas = ExtResource("14_tpury")
+region = Rect2(0, 1080, 1980, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdfws"]
+atlas = ExtResource("14_tpury")
+region = Rect2(1980, 1080, 1980, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef5ck"]
+atlas = ExtResource("14_tpury")
+region = Rect2(3960, 1080, 1980, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qbk7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu05y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv50g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61uui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kn0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdfws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef5ck")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer")]
 script = ExtResource("1_dgoy4")
@@ -69,12 +119,6 @@ texture = ExtResource("9_pdfws")
 position = Vector2(4.5, 394.5)
 texture = ExtResource("10_ef5ck")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-follow_viewport_enabled = true
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
-texture = ExtResource("11_0qbk7")
-
 [node name="LevelFinishUI" parent="." instance=ExtResource("12_bitus")]
 
 [node name="Timer" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("13_cah7x")]
@@ -82,6 +126,9 @@ position = Vector2(693, -467)
 timer = NodePath("../LevelTimer")
 
 [node name="Music" parent="." instance=ExtResource("14_2h30h")]
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0qbk7")
 
 [connection signal="level_complete" from="." to="LevelFinishUI" method="_on_level_1_level_complete"]
 [connection signal="level_one_complete" from="LevelFinishUI" to="LevelFinishUI" method="_on_level_one_complete"]

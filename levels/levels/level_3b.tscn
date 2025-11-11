@@ -213,11 +213,11 @@ top_level = true
 position = Vector2(4.5, 394.5)
 texture = ExtResource("12_h6a0s")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background1" type="Sprite2D" parent="."]
 position = Vector2(30, 0)
 texture = ExtResource("13_e27n3")
 
-[node name="BackgroundAnimation1" type="AnimatedSprite2D" parent="."]
+[node name="Background" type="AnimatedSprite2D" parent="."]
 position = Vector2(1285, 952)
 sprite_frames = SubResource("SpriteFrames_a3wvj")
 frame_progress = 0.73944235

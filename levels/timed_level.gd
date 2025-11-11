@@ -16,6 +16,7 @@ var level_started: TimedLevelStage = TimedLevelStage.SETUP
 
 
 func _ready():
+	$Background.play()
 	get_tree().create_timer(setup_time).timeout.connect(start_level)
 	level_timer.timeout.connect(level_timer_timeout)
 	level_complete.connect(on_level_end)

@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bdhl64qa8mbh4"]
+[gd_scene load_steps=23 format=3 uid="uid://bdhl64qa8mbh4"]
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/basic_level.gd" id="1_20opy"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="2_8l0e1"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_fvrxv"]
 [ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="3_lfnxh"]
 [ext_resource type="Script" uid="uid://drjgkm8r1ypcg" path="res://items/basic_item.gd" id="3_mfgd2"]
-[ext_resource type="Texture2D" uid="uid://07t0yhbsmgo2" path="res://Backgrounds/background2.png" id="4_ofchu"]
 [ext_resource type="Resource" uid="uid://bk441h6n8vgyd" path="res://items/trash.tres" id="4_oq4if"]
 [ext_resource type="PackedScene" uid="uid://buc2wf64kxubv" path="res://menus/LevelFinishUI/LevelFinishUI.tscn" id="5_jq78i"]
 [ext_resource type="Resource" uid="uid://cdxtiijwx4pfu" path="res://items/red_potion.tres" id="5_lu8d4"]
@@ -13,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://bc2wyf85lloq4" path="res://items/red_mace.tres" id="7_sk8bm"]
 [ext_resource type="Resource" uid="uid://dxgdjwptdx0cn" path="res://items/blue_knife.tres" id="8_m74uo"]
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="13_ega0g"]
+[ext_resource type="Texture2D" uid="uid://c38yn3aogn6nw" path="res://Backgrounds/background_sheets/hearth_animated.png" id="13_gf7js"]
 
 [sub_resource type="Resource" id="Resource_hevaq"]
 script = ExtResource("2_fvrxv")
@@ -25,6 +25,56 @@ script = ExtResource("2_fvrxv")
 item_stack = Array[ExtResource("3_mfgd2")]([ExtResource("4_oq4if"), ExtResource("4_oq4if"), ExtResource("7_sk8bm"), ExtResource("5_lu8d4"), ExtResource("6_1arbc"), ExtResource("8_m74uo")])
 randomized_order = true
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqhbp"]
+atlas = ExtResource("13_gf7js")
+region = Rect2(0, 0, 1980, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cal7s"]
+atlas = ExtResource("13_gf7js")
+region = Rect2(1980, 0, 1980, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1nc1"]
+atlas = ExtResource("13_gf7js")
+region = Rect2(3960, 0, 1980, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2jme"]
+atlas = ExtResource("13_gf7js")
+region = Rect2(0, 1080, 1980, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5y2h"]
+atlas = ExtResource("13_gf7js")
+region = Rect2(1980, 1080, 1980, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5vec"]
+atlas = ExtResource("13_gf7js")
+region = Rect2(3960, 1080, 1980, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7nk1n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqhbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cal7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1nc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2jme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5y2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5vec")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_20opy")
@@ -52,15 +102,12 @@ texture = ExtResource("2_8l0e1")
 position = Vector2(4.5, 394.5)
 texture = ExtResource("3_lfnxh")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-follow_viewport_enabled = true
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
-texture = ExtResource("4_ofchu")
-
 [node name="LevelFinishUI" parent="." instance=ExtResource("5_jq78i")]
 
 [node name="Music" parent="." instance=ExtResource("13_ega0g")]
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7nk1n")
 
 [connection signal="level_complete" from="." to="LevelFinishUI" method="_on_level_1_level_complete"]
 [connection signal="level_one_complete" from="LevelFinishUI" to="LevelFinishUI" method="_on_level_one_complete"]

@@ -73,7 +73,7 @@ top_level = true
 position = Vector2(4.5, 394.5)
 texture = ExtResource("6_dud5q")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Background" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7c02u")
 frame_progress = 0.70795685
 

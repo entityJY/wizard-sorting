@@ -31,6 +31,7 @@ var start_next_stack = true
 
 func _ready():
 	start_stack()
+	$Background.play("default")
 	level_complete.connect(on_level_end)
 
 func _process(_delta):

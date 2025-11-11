@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b7xdy8gc5gcoj"]
+[gd_scene load_steps=20 format=3 uid="uid://b7xdy8gc5gcoj"]
 
 [ext_resource type="Script" uid="uid://bgjq2kb615dxg" path="res://levels/timed_level.gd" id="1_vm7no"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_hbb88"]
@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://cdxtiijwx4pfu" path="res://items/red_potion.tres" id="6_xxa5y"]
 [ext_resource type="Resource" uid="uid://b6wciwk4136me" path="res://items/blue_potion.tres" id="7_44o70"]
 [ext_resource type="Resource" uid="uid://dxgdjwptdx0cn" path="res://items/blue_knife.tres" id="7_uo0vl"]
-[ext_resource type="Texture2D" uid="uid://c38yn3aogn6nw" path="res://Backgrounds/background_sheets/hearth_animated.png" id="8_fyimh"]
+[ext_resource type="Texture2D" uid="uid://bq1s578blu1i3" path="res://Backgrounds/background_sheets/manor_spritesheet.png" id="9_2k84i"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="9_ndgrd"]
 [ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="10_h351q"]
 [ext_resource type="PackedScene" uid="uid://bsl7r4j1kwnq4" path="res://menus/timer/timer.tscn" id="11_a5sql"]
@@ -31,50 +31,29 @@ item_stack = Array[ExtResource("3_wcjpl")]([ExtResource("7_uo0vl"), ExtResource(
 randomized_order = true
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xxa5y"]
-atlas = ExtResource("8_fyimh")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp3pm"]
+atlas = ExtResource("9_2k84i")
 region = Rect2(0, 0, 1980, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ukvqh"]
-atlas = ExtResource("8_fyimh")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqjst"]
+atlas = ExtResource("9_2k84i")
 region = Rect2(1980, 0, 1980, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y77p3"]
-atlas = ExtResource("8_fyimh")
+[sub_resource type="AtlasTexture" id="AtlasTexture_50rb2"]
+atlas = ExtResource("9_2k84i")
 region = Rect2(3960, 0, 1980, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dejeo"]
-atlas = ExtResource("8_fyimh")
-region = Rect2(0, 1080, 1980, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uibtu"]
-atlas = ExtResource("8_fyimh")
-region = Rect2(1980, 1080, 1980, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6o4rd"]
-atlas = ExtResource("8_fyimh")
-region = Rect2(3960, 1080, 1980, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wi5cx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xxa5y")
+"texture": SubResource("AtlasTexture_wp3pm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ukvqh")
+"texture": SubResource("AtlasTexture_yqjst")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y77p3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dejeo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uibtu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6o4rd")
+"texture": SubResource("AtlasTexture_50rb2")
 }],
 "loop": true,
 "name": &"default",
@@ -84,7 +63,6 @@ animations = [{
 [node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer")]
 script = ExtResource("1_vm7no")
 level_time = 10.0
-setup_time = 3.0
 level_timer = NodePath("LevelTimer")
 stacks = Array[ExtResource("2_hbb88")]([SubResource("Resource_ukvqh"), SubResource("Resource_y77p3"), SubResource("Resource_a5sql")])
 
