@@ -72,8 +72,8 @@ animations = [{
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer")]
 script = ExtResource("1_vm7no")
-level_time = 3.0
-setup_time = 20.0
+level_time = 20.0
+setup_time = 3.0
 level_timer = NodePath("LevelTimer")
 stacks = Array[ExtResource("2_hbb88")]([SubResource("Resource_ukvqh"), SubResource("Resource_y77p3")])
 

@@ -44,25 +44,28 @@ func _process(_delta):
 	
 	if left:
 		var item = unsorted_stack.pop_front()
-		item.on_sort()
-		left_target.y -= item.sprite.get_height()/2
-		item.calculate_path_attached(left_target)
-		left_target.y -= item.sprite.get_height()/2
-		left_stack.append(item)
+		if item:
+			item.on_sort()
+			left_target.y -= item.sprite.get_height()/2
+			item.calculate_path_attached(left_target)
+			left_target.y -= item.sprite.get_height()/2
+			left_stack.append(item)
 	
 	if right:
 		var item = unsorted_stack.pop_front()
-		item.on_sort()
-		right_target.y -= item.sprite.get_height()/2
-		item.calculate_path_attached(right_target)
-		right_target.y -= item.sprite.get_height()/2
-		right_stack.append(item)
+		if item:
+			item.on_sort()
+			right_target.y -= item.sprite.get_height()/2
+			item.calculate_path_attached(right_target)
+			right_target.y -= item.sprite.get_height()/2
+			right_stack.append(item)
 	
 	if down:
 		var item = unsorted_stack.pop_front()
-		item.on_discard()
-		item.add_attached_target(Vector2(0, 600))
-		discard_stack.append(item)
+		if item:
+			item.on_discard()
+			item.add_attached_target(Vector2(0, 600))
+			discard_stack.append(item)
 		
 	if left or right or down:
 		user_effects.decrement_effects()
@@ -122,10 +125,10 @@ func calculate_score():
 		score = (len(left_stack) + len(right_stack)) / 2
 		for item in left_stack:
 			if not left_keys[0] in item.attributes or Item.Attributes.DISCARD in item.attributes:
-				score -= 1
+				score -= 2
 		for item in right_stack:
 			if not right_keys[0] in item.attributes or Item.Attributes.DISCARD in item.attributes:
-				score -= 1
+				score -= 2
 		for item in discard_stack:
 			if Item.Attributes.DISCARD in item.attributes:
 				score += 1
@@ -181,6 +184,10 @@ func start_stack():
 
 	# activate on_active effect of first item
 	unsorted_stack.item_stack[0].on_enter_active_sort()
+
+	left_stack.clear()
+	right_stack.clear()
+	discard_stack.clear()
 
 
 func _on_stack_timer_timeout():
