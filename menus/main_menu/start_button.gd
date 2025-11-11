@@ -13,7 +13,7 @@ func _on_pressed() -> void:
 	await get_tree().create_timer(2.0).timeout
 	get_parent().transition.emit()
 	await get_tree().create_timer(2.0).timeout
-	get_tree().change_scene_to_file("res://levels/basic_level.tscn")
+	get_tree().change_scene_to_file("res://menus/level_select/level_select.tscn")
 	
 func _on_main_menu_pack_up() -> void:
 	disabled = true
