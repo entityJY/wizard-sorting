@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://wrii0mqf400d"]
+
+[ext_resource type="AudioStream" uid="uid://my5ief616urc" path="res://sound/move_item.wav" id="1_5ffuk"]
+[ext_resource type="AudioStream" uid="uid://rhyihh3rqexq" path="res://sound/click.wav" id="1_ejtgv"]
+[ext_resource type="AudioStream" uid="uid://btghl1o8e7uir" path="res://sound/explosion.wav" id="1_pk0wj"]
+[ext_resource type="AudioStream" uid="uid://b40ct6h1ce1pt" path="res://sound/powerUp.wav" id="3_aji4n"]
+[ext_resource type="AudioStream" uid="uid://cfivq5qa21jj0" path="res://sound/background-music-soft-calm-404429.mp3" id="5_6c74v"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="delete_item_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_pk0wj")
+
+[node name="button_press_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ejtgv")
+
+[node name="move_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5ffuk")
+
+[node name="finish_level_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aji4n")
+
+[node name="level_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6c74v")
