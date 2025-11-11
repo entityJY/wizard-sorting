@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://b7xdy8gc5gcoj"]
+[gd_scene load_steps=21 format=3 uid="uid://b7xdy8gc5gcoj"]
 
 [ext_resource type="Script" uid="uid://bgjq2kb615dxg" path="res://levels/timed_level.gd" id="1_vm7no"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_hbb88"]
 [ext_resource type="Script" uid="uid://drjgkm8r1ypcg" path="res://items/basic_item.gd" id="3_wcjpl"]
 [ext_resource type="Resource" uid="uid://bc2wyf85lloq4" path="res://items/red_mace.tres" id="5_fyimh"]
 [ext_resource type="Resource" uid="uid://cdxtiijwx4pfu" path="res://items/red_potion.tres" id="6_xxa5y"]
+[ext_resource type="Resource" uid="uid://b6wciwk4136me" path="res://items/blue_potion.tres" id="7_44o70"]
 [ext_resource type="Resource" uid="uid://dxgdjwptdx0cn" path="res://items/blue_knife.tres" id="7_uo0vl"]
 [ext_resource type="Texture2D" uid="uid://c38yn3aogn6nw" path="res://Backgrounds/background_sheets/hearth_animated.png" id="8_fyimh"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="9_ndgrd"]
@@ -13,11 +14,19 @@
 [sub_resource type="Resource" id="Resource_ukvqh"]
 script = ExtResource("2_hbb88")
 item_stack = Array[ExtResource("3_wcjpl")]([ExtResource("7_uo0vl"), ExtResource("7_uo0vl"), ExtResource("7_uo0vl"), ExtResource("5_fyimh"), ExtResource("5_fyimh"), ExtResource("5_fyimh")])
+randomized_order = true
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
 [sub_resource type="Resource" id="Resource_y77p3"]
 script = ExtResource("2_hbb88")
 item_stack = Array[ExtResource("3_wcjpl")]([ExtResource("6_xxa5y"), ExtResource("6_xxa5y"), ExtResource("6_xxa5y"), ExtResource("5_fyimh"), ExtResource("5_fyimh"), ExtResource("5_fyimh")])
+randomized_order = true
+metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
+
+[sub_resource type="Resource" id="Resource_a5sql"]
+script = ExtResource("2_hbb88")
+item_stack = Array[ExtResource("3_wcjpl")]([ExtResource("7_uo0vl"), ExtResource("7_44o70"), ExtResource("5_fyimh"), ExtResource("6_xxa5y"), ExtResource("6_xxa5y"), ExtResource("5_fyimh")])
+randomized_order = true
 metadata/_custom_type_script = "uid://b3t2d1rtlp32f"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxa5y"]
@@ -72,10 +81,10 @@ animations = [{
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer")]
 script = ExtResource("1_vm7no")
-level_time = 20.0
+level_time = 10.0
 setup_time = 3.0
 level_timer = NodePath("LevelTimer")
-stacks = Array[ExtResource("2_hbb88")]([SubResource("Resource_ukvqh"), SubResource("Resource_y77p3")])
+stacks = Array[ExtResource("2_hbb88")]([SubResource("Resource_ukvqh"), SubResource("Resource_y77p3"), SubResource("Resource_a5sql")])
 
 [node name="LevelTimer" type="Timer" parent="."]
 
