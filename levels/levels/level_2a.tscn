@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdhl64qa8mbh4"]
+[gd_scene load_steps=16 format=3 uid="uid://bdhl64qa8mbh4"]
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/basic_level.gd" id="1_20opy"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="2_8l0e1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://b6wciwk4136me" path="res://items/blue_potion.tres" id="6_1arbc"]
 [ext_resource type="Resource" uid="uid://bc2wyf85lloq4" path="res://items/red_mace.tres" id="7_sk8bm"]
 [ext_resource type="Resource" uid="uid://dxgdjwptdx0cn" path="res://items/blue_knife.tres" id="8_m74uo"]
+[ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="13_ega0g"]
 
 [sub_resource type="Resource" id="Resource_hevaq"]
 script = ExtResource("2_fvrxv")
@@ -58,6 +59,8 @@ follow_viewport_enabled = true
 texture = ExtResource("4_ofchu")
 
 [node name="LevelFinishUI" parent="." instance=ExtResource("5_jq78i")]
+
+[node name="Music" parent="." instance=ExtResource("13_ega0g")]
 
 [connection signal="level_complete" from="." to="LevelFinishUI" method="_on_level_1_level_complete"]
 [connection signal="level_one_complete" from="LevelFinishUI" to="LevelFinishUI" method="_on_level_one_complete"]

@@ -36,7 +36,7 @@ func _ready():
 
 func _process(_delta):
 	
-	$AnimatedSprite2D.play()
+	#$AnimatedSprite2D.play()
 
 	if between_stacks:
 		return
@@ -50,7 +50,7 @@ func _process(_delta):
 		right = Input.is_action_just_pressed("left")
 	
 	if left:
-		$Music/move_sfx2.play()
+		$Music/move_sfx.play()
 		var item = unsorted_stack.pop_front()
 		if item:
 			item.on_sort()
@@ -60,7 +60,7 @@ func _process(_delta):
 			left_stack.append(item)
 	
 	if right:
-		$Music/move_sfx2.play()
+		$Music/move_sfx.play()
 		var item = unsorted_stack.pop_front()
 		if item:
 			item.on_sort()
@@ -70,7 +70,7 @@ func _process(_delta):
 			right_stack.append(item)
 	
 	if down:
-		$Music/delete_item_sfx2.play()
+		$Music/delete_item_sfx.play()
 		var item = unsorted_stack.pop_front()
 		if item:
 			item.on_discard()
@@ -215,6 +215,6 @@ func _on_stack_timer_timeout():
 
 
 func on_level_end(_total_score, _completed_stacks):
-	$Music/finish_level_sfx2.play()
+	$Music/finish_level_sfx.play()
 	print("Level Complete! Total Score: ")
 	print(total_score)

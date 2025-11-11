@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bw3u83unndaf5"]
+[gd_scene load_steps=13 format=3 uid="uid://bw3u83unndaf5"]
 
 [ext_resource type="Script" uid="uid://bs1268iy76com" path="res://menus/main_menu/main_menu.gd" id="1_oic2i"]
 [ext_resource type="Texture2D" uid="uid://cs85t214c5kb1" path="res://Backgrounds/main menu background.png" id="2_8woyc"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bb6gssbawou4o" path="res://assets/title.png" id="9_d1j5c"]
 [ext_resource type="Texture2D" uid="uid://dcrww3kie4qd" path="res://assets/main menu illust.png" id="10_pmi7g"]
 [ext_resource type="PackedScene" uid="uid://b32y2aenw4fgn" path="res://menus/transition.tscn" id="11_d1j5c"]
+[ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="12_pmi7g"]
 
 [node name="main_menu" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -76,6 +77,8 @@ texture = ExtResource("10_pmi7g")
 
 [node name="Transition" parent="." instance=ExtResource("11_d1j5c")]
 layer = 2
+
+[node name="Music" parent="." instance=ExtResource("12_pmi7g")]
 
 [connection signal="pack_up" from="." to="." method="_on_pack_up"]
 [connection signal="pack_up" from="." to="Endless" method="_on_main_menu_pack_up"]

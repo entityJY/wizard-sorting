@@ -1,6 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://t0ynn7qahxa3"]
+[gd_scene load_steps=33 format=3 uid="uid://t0ynn7qahxa3"]
 
-[ext_resource type="Script" uid="uid://ddcrmbr6tvvh2" path="res://levels/endless_level.gd" id="1_lhpit"]
+[ext_resource type="Script" path="res://levels/endless_level.gd" id="1_lhpit"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="2_56i3n"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_s12x1"]
 [ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="3_30fi4"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cpl3twwukqr3v" path="res://assets/blue knife.png" id="12_mh2i3"]
 [ext_resource type="Texture2D" uid="uid://dhbnva0sv6wv3" path="res://assets/red mace.png" id="13_tcot8"]
 [ext_resource type="Texture2D" uid="uid://bp4wjd31mnu8b" path="res://assets/blue potion.png" id="14_tcot8"]
+[ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="15_tk63e"]
 [ext_resource type="PackedScene" uid="uid://bsl7r4j1kwnq4" path="res://menus/timer/timer.tscn" id="19_2dkhr"]
 
 [sub_resource type="Resource" id="Resource_xsc4g"]
@@ -122,6 +123,8 @@ position = Vector2(431, 300)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="InstantiatedItems" type="Node" parent="."]
+
+[node name="Music" parent="InstantiatedItems" instance=ExtResource("15_tk63e")]
 
 [node name="TableFront" type="Sprite2D" parent="."]
 top_level = true

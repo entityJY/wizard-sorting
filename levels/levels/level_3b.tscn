@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cxf81gtxel11e"]
+[gd_scene load_steps=43 format=3 uid="uid://cxf81gtxel11e"]
 
 [ext_resource type="Script" uid="uid://bgjq2kb615dxg" path="res://levels/timed_level.gd" id="1_hh7hl"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_6sskq"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="15_8l7mo"]
 [ext_resource type="PackedScene" uid="uid://buc2wf64kxubv" path="res://menus/LevelFinishUI/LevelFinishUI.tscn" id="16_r53y3"]
 [ext_resource type="PackedScene" uid="uid://bsl7r4j1kwnq4" path="res://menus/timer/timer.tscn" id="18_462in"]
+[ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="19_w4ai8"]
 
 [sub_resource type="Resource" id="Resource_tthxy"]
 resource_local_to_scene = true
@@ -234,6 +235,8 @@ follow_viewport_enabled = true
 [node name="Timer" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("18_462in")]
 position = Vector2(630, -361)
 timer = NodePath("../LevelTimer")
+
+[node name="Music" parent="." instance=ExtResource("19_w4ai8")]
 
 [connection signal="level_complete" from="." to="LevelFinishUI" method="_on_level_1_level_complete"]
 [connection signal="level_one_complete" from="LevelFinishUI" to="LevelFinishUI" method="_on_level_one_complete"]

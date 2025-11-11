@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://yxum23kuicr3"]
+[gd_scene load_steps=7 format=3 uid="uid://yxum23kuicr3"]
 
 [ext_resource type="Texture2D" uid="uid://d1pua3jlr6ujc" path="res://assets/button.png" id="1_0i0ci"]
 [ext_resource type="Script" uid="uid://ccdj5gng3ks3s" path="res://menus/level_select/level_select.gd" id="1_xbqmi"]
 [ext_resource type="Texture2D" uid="uid://cs85t214c5kb1" path="res://Backgrounds/main menu background.png" id="2_jctg0"]
 [ext_resource type="Texture2D" uid="uid://c6xvg7a5pqo53" path="res://assets/button highlighted.png" id="4_vj0hx"]
 [ext_resource type="PackedScene" uid="uid://b32y2aenw4fgn" path="res://menus/transition.tscn" id="5_gpwpm"]
+[ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="6_jctg0"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_xbqmi")
@@ -21,54 +22,154 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -700.0
+offset_left = -849.0
 offset_top = -250.0
-offset_right = 700.0
+offset_right = 851.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 400
+theme_override_constants/h_separation = 300
 theme_override_constants/v_separation = 100
-columns = 3
+columns = 4
 
-[node name="L1" type="TextureButton" parent="GridContainer"]
+[node name="L1A" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_0i0ci")
 texture_pressed = ExtResource("4_vj0hx")
 texture_hover = ExtResource("4_vj0hx")
 
-[node name="L1Text" type="RichTextLabel" parent="GridContainer/L1"]
+[node name="L1AT" type="RichTextLabel" parent="GridContainer/L1A"]
 layout_mode = 0
-offset_left = 74.0
+offset_left = 49.0
 offset_top = 51.0
-offset_right = 129.0
+offset_right = 145.0
 offset_bottom = 139.0
 theme_override_colors/default_color = Color(0.36862746, 0.14509805, 0.11372549, 1)
 theme_override_font_sizes/normal_font_size = 64
-text = "1"
+text = "1A"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="L2" type="TextureButton" parent="GridContainer"]
+[node name="L2A" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_0i0ci")
+texture_pressed = ExtResource("4_vj0hx")
+texture_hover = ExtResource("4_vj0hx")
 
-[node name="L3" type="TextureButton" parent="GridContainer"]
-layout_mode = 2
-texture_normal = ExtResource("1_0i0ci")
+[node name="L2AT" type="RichTextLabel" parent="GridContainer/L2A"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 54.0
+offset_right = 145.0
+offset_bottom = 142.0
+theme_override_colors/default_color = Color(0.36862746, 0.14509805, 0.11372549, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "2A"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="L4" type="TextureButton" parent="GridContainer"]
+[node name="L3A" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_0i0ci")
+texture_pressed = ExtResource("4_vj0hx")
+texture_hover = ExtResource("4_vj0hx")
 
-[node name="L5" type="TextureButton" parent="GridContainer"]
-layout_mode = 2
-texture_normal = ExtResource("1_0i0ci")
+[node name="L3AT" type="RichTextLabel" parent="GridContainer/L3A"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 55.0
+offset_right = 145.0
+offset_bottom = 143.0
+theme_override_colors/default_color = Color(0.36862746, 0.14509805, 0.11372549, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "3A
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="L6" type="TextureButton" parent="GridContainer"]
+[node name="L4A" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_0i0ci")
+texture_pressed = ExtResource("4_vj0hx")
+texture_hover = ExtResource("4_vj0hx")
+
+[node name="L4AT" type="RichTextLabel" parent="GridContainer/L4A"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 49.0
+offset_right = 132.0
+offset_bottom = 137.0
+theme_override_colors/default_color = Color(0.36862746, 0.14509805, 0.11372549, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="L1B" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_0i0ci")
+texture_pressed = ExtResource("4_vj0hx")
+texture_hover = ExtResource("4_vj0hx")
+
+[node name="L1BT" type="RichTextLabel" parent="GridContainer/L1B"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 56.0
+offset_right = 147.0
+offset_bottom = 144.0
+theme_override_colors/default_color = Color(0.36862746, 0.14509805, 0.11372549, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "1B
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="L2B" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_0i0ci")
+texture_pressed = ExtResource("4_vj0hx")
+texture_hover = ExtResource("4_vj0hx")
+
+[node name="L2BT" type="RichTextLabel" parent="GridContainer/L2B"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 56.0
+offset_right = 143.0
+offset_bottom = 144.0
+theme_override_colors/default_color = Color(0.36862746, 0.14509805, 0.11372549, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "2B
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="L3B" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_0i0ci")
+texture_pressed = ExtResource("4_vj0hx")
+texture_hover = ExtResource("4_vj0hx")
+
+[node name="L3BT" type="RichTextLabel" parent="GridContainer/L3B"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 57.0
+offset_right = 145.0
+offset_bottom = 145.0
+theme_override_colors/default_color = Color(0.36862746, 0.14509805, 0.11372549, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "3B
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Transition" parent="." instance=ExtResource("5_gpwpm")]
 
-[connection signal="pressed" from="GridContainer/L1" to="." method="_on_l_1_pressed"]
+[node name="Music" parent="." instance=ExtResource("6_jctg0")]
+
+[connection signal="pressed" from="GridContainer/L1A" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="GridContainer/L2A" to="." method="_on_l_2a_pressed"]
+[connection signal="pressed" from="GridContainer/L3A" to="." method="_on_l_3a_pressed"]
+[connection signal="pressed" from="GridContainer/L4A" to="." method="_on_l_4a_pressed"]
+[connection signal="pressed" from="GridContainer/L1B" to="." method="_on_l_1b_pressed"]
+[connection signal="pressed" from="GridContainer/L2B" to="." method="_on_l_2b_pressed"]
+[connection signal="pressed" from="GridContainer/L3B" to="." method="_on_l_3b_pressed"]
