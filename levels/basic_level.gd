@@ -30,6 +30,8 @@ func _ready():
 	level_complete.connect(on_level_end)
 
 func _process(_delta):
+	
+	$AnimatedSprite2D.play()
 
 	if between_stacks:
 		return
