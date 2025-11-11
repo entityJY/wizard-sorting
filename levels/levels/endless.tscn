@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://t0ynn7qahxa3"]
 
-[ext_resource type="Script" path="res://levels/endless_level.gd" id="1_lhpit"]
+[ext_resource type="Script" uid="uid://ddcrmbr6tvvh2" path="res://levels/endless_level.gd" id="1_lhpit"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="2_56i3n"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_s12x1"]
 [ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="3_30fi4"]
@@ -108,6 +108,8 @@ script = ExtResource("1_lhpit")
 level_time = 20.0
 level_timer = NodePath("LevelTimer")
 stacks = Array[ExtResource("2_s12x1")]([SubResource("Resource_xsc4g"), SubResource("Resource_dd6q0"), SubResource("Resource_ehhrl"), SubResource("Resource_mwh2e"), SubResource("Resource_brc3a"), SubResource("Resource_s6t3s")])
+
+[node name="Music" parent="." instance=ExtResource("15_tk63e")]
 
 [node name="LevelTimer" type="Timer" parent="."]
 
