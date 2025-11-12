@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://hbpfca08eeos"]
+[gd_scene load_steps=38 format=3 uid="uid://hbpfca08eeos"]
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/basic_level.gd" id="1_t6q73"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="2_hokjj"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cxf81gtxel11e" path="res://levels/levels/level_3b.tscn" id="17_rn4kr"]
 [ext_resource type="PackedScene" uid="uid://b32y2aenw4fgn" path="res://menus/transition.tscn" id="18_0g6i2"]
 [ext_resource type="PackedScene" uid="uid://duihnpnadp7vi" path="res://menus/tutorial.tscn" id="20_k1o1q"]
+[ext_resource type="Texture2D" uid="uid://drx8sdmy7863o" path="res://assets/tut confusion.png" id="21_yutb6"]
 
 [sub_resource type="Resource" id="Resource_tthxy"]
 resource_local_to_scene = true
@@ -182,6 +183,7 @@ next_level = ExtResource("17_rn4kr")
 [node name="Music" parent="." instance=ExtResource("17_42l0d")]
 
 [node name="Tutorial" parent="." instance=ExtResource("20_k1o1q")]
+tutorial_text = ExtResource("21_yutb6")
 
 [connection signal="level_complete" from="." to="LevelFinishUI" method="_on_level_1_level_complete"]
 [connection signal="level_one_complete" from="LevelFinishUI" to="LevelFinishUI" method="_on_level_one_complete"]

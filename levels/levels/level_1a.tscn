@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bdn1j57uv1wnh"]
+[gd_scene load_steps=25 format=3 uid="uid://bdn1j57uv1wnh"]
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/basic_level.gd" id="1_x1fhx"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_m8r0g"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://cfivq5qa21jj0" path="res://sound/background-music-soft-calm-404429.mp3" id="15_de57h"]
 [ext_resource type="PackedScene" uid="uid://b32y2aenw4fgn" path="res://menus/transition.tscn" id="17_a17w8"]
 [ext_resource type="PackedScene" uid="uid://duihnpnadp7vi" path="res://menus/tutorial.tscn" id="18_jbowj"]
+[ext_resource type="Texture2D" uid="uid://c8brbl7squchv" path="res://assets/tut leftright.png" id="19_xl85s"]
 
 [sub_resource type="Resource" id="Resource_8jbay"]
 script = ExtResource("2_m8r0g")
@@ -109,6 +110,7 @@ autoplay = true
 [node name="Transition" parent="." instance=ExtResource("17_a17w8")]
 
 [node name="Tutorial" parent="." instance=ExtResource("18_jbowj")]
+tutorial_text = ExtResource("19_xl85s")
 
 [connection signal="level_complete" from="." to="LevelFinishUI" method="_on_level_1_level_complete"]
 [connection signal="level_one_complete" from="LevelFinishUI" to="LevelFinishUI" method="_on_level_one_complete"]
