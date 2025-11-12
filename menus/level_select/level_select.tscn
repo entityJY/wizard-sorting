@@ -22,15 +22,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -849.0
+offset_left = -600.0
 offset_top = -250.0
-offset_right = 851.0
+offset_right = 600.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 300
 theme_override_constants/v_separation = 100
-columns = 4
+columns = 3
 
 [node name="L1A" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
@@ -84,24 +84,6 @@ theme_override_colors/default_color = Color(0.36862746, 0.14509805, 0.11372549, 
 theme_override_font_sizes/normal_font_size = 64
 text = "3A
 "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="L4A" type="TextureButton" parent="GridContainer"]
-layout_mode = 2
-texture_normal = ExtResource("1_0i0ci")
-texture_pressed = ExtResource("4_vj0hx")
-texture_hover = ExtResource("4_vj0hx")
-
-[node name="L4AT" type="RichTextLabel" parent="GridContainer/L4A"]
-layout_mode = 0
-offset_left = 72.0
-offset_top = 49.0
-offset_right = 132.0
-offset_bottom = 137.0
-theme_override_colors/default_color = Color(0.36862746, 0.14509805, 0.11372549, 1)
-theme_override_font_sizes/normal_font_size = 64
-text = "4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -169,7 +151,6 @@ vertical_alignment = 1
 [connection signal="pressed" from="GridContainer/L1A" to="." method="_on_l_1_pressed"]
 [connection signal="pressed" from="GridContainer/L2A" to="." method="_on_l_2a_pressed"]
 [connection signal="pressed" from="GridContainer/L3A" to="." method="_on_l_3a_pressed"]
-[connection signal="pressed" from="GridContainer/L4A" to="." method="_on_l_4a_pressed"]
 [connection signal="pressed" from="GridContainer/L1B" to="." method="_on_l_1b_pressed"]
 [connection signal="pressed" from="GridContainer/L2B" to="." method="_on_l_2b_pressed"]
 [connection signal="pressed" from="GridContainer/L3B" to="." method="_on_l_3b_pressed"]

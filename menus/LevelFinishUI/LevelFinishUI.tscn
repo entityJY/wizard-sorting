@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://buc2wf64kxubv"]
 
 [ext_resource type="Script" uid="uid://bkfiqbmdt62ob" path="res://menus/LevelFinishUI/level_finish_ui.gd" id="1_6msl1"]
-[ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="2_cwesl"]
+[ext_resource type="Texture2D" uid="uid://docsqmyggaaq1" path="res://assets/level complete.webp" id="2_6msl1"]
 [ext_resource type="Script" uid="uid://swuf1fi60t56" path="res://menus/LevelFinishUI/score_background.gd" id="3_4lj4l"]
 [ext_resource type="Texture2D" uid="uid://d6r4dw0crej8" path="res://assets/house.png" id="4_nb1nv"]
 [ext_resource type="Texture2D" uid="uid://biscg3y7631g2" path="res://assets/househighlight.png" id="5_otqiw"]
@@ -29,43 +29,42 @@ offset_right = -662.0
 offset_bottom = 384.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_cwesl")
+texture = ExtResource("2_6msl1")
 script = ExtResource("3_4lj4l")
 
 [node name="ReturnToMenu" type="TextureButton" parent="ScoreBackground"]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 290.0
-offset_right = 305.0
-offset_bottom = 490.0
+offset_left = 106.0
+offset_top = 209.0
+offset_right = 306.0
+offset_bottom = 409.0
 scale = Vector2(0.64, 0.64)
 texture_normal = ExtResource("4_nb1nv")
 texture_pressed = ExtResource("5_otqiw")
 texture_hover = ExtResource("5_otqiw")
 script = ExtResource("6_fuwn3")
 metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
 
 [node name="Continue" type="TextureButton" parent="ScoreBackground"]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 288.0
-offset_right = 488.0
-offset_bottom = 416.0
+offset_left = 351.0
+offset_top = 208.0
+offset_right = 551.0
+offset_bottom = 408.0
 scale = Vector2(0.64, 0.64)
 texture_normal = ExtResource("7_ov87u")
 texture_pressed = ExtResource("8_up3dh")
 texture_hover = ExtResource("8_up3dh")
 metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
 
 [node name="LevelCompleted" type="RichTextLabel" parent="ScoreBackground"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = -16.0
-offset_right = 576.0
-offset_bottom = 112.0
+offset_left = 21.0
+offset_top = 31.0
+offset_right = 581.0
+offset_bottom = 159.0
 theme = ExtResource("9_4h4mq")
+theme_override_colors/default_color = Color(0.045312412, 0.04531242, 0.04531242, 1)
 theme_override_font_sizes/normal_font_size = 96
 text = "Level Complete"
 horizontal_alignment = 1
@@ -74,10 +73,12 @@ metadata/_edit_group_ = true
 
 [node name="Score" type="RichTextLabel" parent="ScoreBackground"]
 layout_mode = 0
-offset_left = 241.0
-offset_top = 102.0
-offset_right = 350.0
-offset_bottom = 143.0
+offset_left = 201.0
+offset_top = 143.0
+offset_right = 395.0
+offset_bottom = 207.0
+theme_override_colors/default_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+theme_override_font_sizes/normal_font_size = 32
 horizontal_alignment = 1
 script = ExtResource("11_juj26")
 metadata/_edit_group_ = true
