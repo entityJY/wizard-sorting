@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://buc2wf64kxubv"]
+[gd_scene load_steps=11 format=3 uid="uid://buc2wf64kxubv"]
 
 [ext_resource type="Script" uid="uid://bkfiqbmdt62ob" path="res://menus/LevelFinishUI/level_finish_ui.gd" id="1_6msl1"]
 [ext_resource type="Texture2D" uid="uid://docsqmyggaaq1" path="res://assets/level complete.webp" id="2_6msl1"]
 [ext_resource type="Script" uid="uid://swuf1fi60t56" path="res://menus/LevelFinishUI/score_background.gd" id="3_4lj4l"]
 [ext_resource type="Texture2D" uid="uid://d6r4dw0crej8" path="res://assets/house.png" id="4_nb1nv"]
 [ext_resource type="Texture2D" uid="uid://biscg3y7631g2" path="res://assets/househighlight.png" id="5_otqiw"]
-[ext_resource type="Script" uid="uid://cnl1hwsn7lrgp" path="res://menus/LevelFinishUI/return_to_menu.gd" id="6_fuwn3"]
 [ext_resource type="Texture2D" uid="uid://dnmiunuvrag87" path="res://assets/arrow.png" id="7_ov87u"]
 [ext_resource type="Texture2D" uid="uid://cvvii5n1w08qn" path="res://assets/arrowhighlight.png" id="8_up3dh"]
 [ext_resource type="Theme" path="res://theme.tres" id="9_4h4mq"]
@@ -42,7 +41,6 @@ scale = Vector2(0.64, 0.64)
 texture_normal = ExtResource("4_nb1nv")
 texture_pressed = ExtResource("5_otqiw")
 texture_hover = ExtResource("5_otqiw")
-script = ExtResource("6_fuwn3")
 metadata/_edit_group_ = true
 
 [node name="Continue" type="TextureButton" parent="ScoreBackground"]
@@ -86,5 +84,5 @@ metadata/_edit_group_ = true
 [connection signal="level_one_complete" from="." to="ScoreBackground" method="_on_level_finish_ui_level_one_complete"]
 [connection signal="level_one_complete" from="." to="ScoreBackground/LevelCompleted" method="_on_level_finish_ui_level_one_complete"]
 [connection signal="level_one_complete" from="." to="ScoreBackground/Score" method="_on_level_finish_ui_level_one_complete"]
-[connection signal="pressed" from="ScoreBackground/ReturnToMenu" to="ScoreBackground/ReturnToMenu" method="_on_pressed"]
+[connection signal="button_down" from="ScoreBackground/ReturnToMenu" to="." method="_on_return_to_menu_button_down"]
 [connection signal="button_down" from="ScoreBackground/Continue" to="." method="_on_continue_button_down"]

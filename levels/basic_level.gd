@@ -5,6 +5,8 @@ class_name Level
 @onready var button_press_sfx: AudioStreamPlayer = $Music/button_press_sfx
 @onready var finish_level_sfx: AudioStreamPlayer = $Music/finish_level_sfx
 
+@export var transition: Transition
+
 
 @export var stacks: Array[ItemStack]
 var unsorted_stack: ItemStack
@@ -32,9 +34,8 @@ signal tutorial(level: int)
 
 
 func _ready():
-	if get_tree().current_scene.get_name() == "Level1":
-		tutorial.emit(1)
-	print(get_tree().current_scene.get_name() == "Level1")
+	if transition:
+		transition.transition(1)
 	start_stack()
 	$Background.play("default")
 	level_complete.connect(on_level_end)

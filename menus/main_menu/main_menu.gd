@@ -2,6 +2,12 @@ extends CanvasLayer
 signal pack_up
 signal transition
 
+@export var transition_: Transition
+
+
+func _ready():
+	if transition:
+		transition_.transition(1)
 
 func _on_pack_up() -> void:
 	$Music/button_press_sfx.play()
