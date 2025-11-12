@@ -27,7 +27,7 @@ func _process(delta):
 
 
 func start_stack():
-	between_stacks = false
+	get_tree().create_timer(.25).timeout.connect(extra_delay)
 
 	# reset target_positions
 	left_target = $LeftStack.global_position
@@ -66,7 +66,7 @@ func start_stack():
 
 		prev_height = item.sprite.get_height()
 	
-	unsorted_stack.item_stack.reverse()
+	# unsorted_stack.item_stack.reverse()
 
 	# activate on_active effect of first item
 	unsorted_stack.item_stack[0].on_enter_active_sort()

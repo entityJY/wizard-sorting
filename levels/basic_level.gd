@@ -17,7 +17,7 @@ var user_effects: UserEffects = UserEffects.new()
 var left_target: Vector2
 var right_target: Vector2
 
-var between_stacks: bool = false
+var between_stacks: bool = true
 
 signal stack_sorted(score: int)
 var total_score: int = 0
@@ -49,6 +49,8 @@ func _process(_delta):
 		left = Input.is_action_just_pressed("right")
 		right = Input.is_action_just_pressed("left")
 	
+	var height_to_move_stack = 0
+	
 	if left:
 		move_sfx.play()
 		var item = unsorted_stack.pop_front()
@@ -58,8 +60,9 @@ func _process(_delta):
 			item.calculate_path_attached(left_target)
 			left_target.y -= item.sprite.get_height()/2
 			left_stack.append(item)
+			height_to_move_stack = item.sprite.get_height()
 	
-	if right:
+	elif right:
 		move_sfx.play()
 		var item = unsorted_stack.pop_front()
 		if item:
@@ -68,19 +71,23 @@ func _process(_delta):
 			item.calculate_path_attached(right_target)
 			right_target.y -= item.sprite.get_height()/2
 			right_stack.append(item)
+			height_to_move_stack = item.sprite.get_height()
 	
-	if down:
+	elif down:
 		delete_item_sfx.play()
 		var item = unsorted_stack.pop_front()
 		if item:
 			item.on_discard()
 			item.add_attached_target(Vector2(0, 600))
 			discard_stack.append(item)
+			height_to_move_stack = item.sprite.get_height()
 		
 	if left or right or down:
 		user_effects.decrement_effects()
 		if not unsorted_stack.is_empty():
 			unsorted_stack.item_stack[0].on_enter_active_sort()
+			for item in unsorted_stack.item_stack:
+				item.add_attached_target(Vector2(0, item.attached_node.global_position.y+height_to_move_stack))
 	
 	if unsorted_stack.is_empty():
 		calculate_score()
@@ -150,8 +157,11 @@ func calculate_score():
 	between_stacks = true
 
 
-func start_stack():
+func extra_delay():
 	between_stacks = false
+
+func start_stack():
+	get_tree().create_timer(.25).timeout.connect(extra_delay)
 
 	# reset target_positions
 	left_target = $LeftStack.global_position
@@ -190,7 +200,7 @@ func start_stack():
 
 		prev_height = item.sprite.get_height()
 	
-	unsorted_stack.item_stack.reverse()
+	# unsorted_stack.item_stack.reverse()
 
 	# activate on_active effect of first item
 	unsorted_stack.item_stack[0].on_enter_active_sort()
