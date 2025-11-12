@@ -8,17 +8,18 @@ script = ExtResource("1_0pakk")
 text_label = NodePath("RichTextLabel")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_top = -139.0
-offset_right = 367.0
-offset_bottom = 361.0
+offset_left = 1.0
+offset_top = -184.0
+offset_right = 368.0
+offset_bottom = 316.0
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_0pakk")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 77.0
-offset_top = 56.0
-offset_right = 197.0
-offset_bottom = 136.0
+offset_left = 78.0
+offset_top = 11.0
+offset_right = 198.0
+offset_bottom = 91.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "60.57"
