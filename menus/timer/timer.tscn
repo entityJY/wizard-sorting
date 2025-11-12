@@ -1,23 +1,26 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsl7r4j1kwnq4"]
 
 [ext_resource type="Script" uid="uid://crsh2njtfqnjg" path="res://menus/timer/timer.gd" id="1_0pakk"]
-[ext_resource type="Texture2D" uid="uid://dadk8tgqwamsc" path="res://icon.svg" id="1_tjeg3"]
+[ext_resource type="Texture2D" uid="uid://qvwjjs3wadgn" path="res://assets/clock.png" id="2_0pakk"]
 
 [node name="Timer" type="CanvasGroup" node_paths=PackedStringArray("text_label")]
 script = ExtResource("1_0pakk")
 text_label = NodePath("RichTextLabel")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 128.0
-offset_bottom = 128.0
-texture = ExtResource("1_tjeg3")
+offset_left = 1.0
+offset_top = -184.0
+offset_right = 368.0
+offset_bottom = 316.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_0pakk")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 3.0
-offset_top = 23.0
-offset_right = 123.0
-offset_bottom = 103.0
+offset_left = 78.0
+offset_top = 11.0
+offset_right = 198.0
+offset_bottom = 91.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "60.57"
-horizontal_alignment = 1
 vertical_alignment = 1
