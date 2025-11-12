@@ -159,7 +159,7 @@ texture = ExtResource("3_30fi4")
 transition = NodePath("../Transition")
 
 [node name="Timer" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("19_2dkhr")]
-position = Vector2(662, -407)
+position = Vector2(671, -357)
 timer = NodePath("../LevelTimer")
 
 [node name="Transition" parent="." instance=ExtResource("21_2xcmh")]
