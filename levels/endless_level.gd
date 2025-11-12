@@ -2,6 +2,7 @@ extends Level
 class_name EndlessLevel
 
 enum TimedLevelStage {
+	TRANSITION,
 	SETUP,
 	PLAYING,
 	FINISHED,
@@ -15,11 +16,19 @@ var level_started: TimedLevelStage = TimedLevelStage.SETUP
 
 
 func _ready():
+	if transition:
+		level_started = TimedLevelStage.TRANSITION
+		transition.transition(1)
+		transition.finish_transition.connect(transition_func)
+	else:
+		get_tree().create_timer(setup_time).timeout.connect(start_level)
 	$Background.play()
-	get_tree().create_timer(setup_time).timeout.connect(start_level)
 	level_timer.timeout.connect(level_timer_timeout)
 	level_complete.connect(on_level_end)
 	stack_sorted.connect(add_time)
+
+func transition_func(_state: int):
+	get_tree().create_timer(setup_time).timeout.connect(start_level)
 
 func _process(delta):
 	if level_started == TimedLevelStage.PLAYING:

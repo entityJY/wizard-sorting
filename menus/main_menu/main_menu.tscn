@@ -10,12 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://ddolrd5nfujla" path="res://assets/play button highlighted.png" id="7_d1j5c"]
 [ext_resource type="Texture2D" uid="uid://bb6gssbawou4o" path="res://assets/title.png" id="9_d1j5c"]
 [ext_resource type="Texture2D" uid="uid://dcrww3kie4qd" path="res://assets/main menu illust.png" id="10_pmi7g"]
-[ext_resource type="PackedScene" uid="uid://b32y2aenw4fgn" path="res://menus/transition.tscn" id="11_d1j5c"]
+[ext_resource type="PackedScene" uid="uid://do6kyva5h7e15" path="res://menus/transition.tscn" id="11_d1j5c"]
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="12_pmi7g"]
 
-[node name="main_menu" type="CanvasLayer"]
+[node name="main_menu" type="CanvasLayer" node_paths=PackedStringArray("transition_")]
 follow_viewport_enabled = true
 script = ExtResource("1_oic2i")
+transition_ = NodePath("Transition")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1980.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b7xdy8gc5gcoj"]
+[gd_scene load_steps=23 format=3 uid="uid://b7xdy8gc5gcoj"]
 
 [ext_resource type="Script" uid="uid://bgjq2kb615dxg" path="res://levels/timed_level.gd" id="1_vm7no"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_hbb88"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="12_2k84i"]
 [ext_resource type="PackedScene" uid="uid://buc2wf64kxubv" path="res://menus/LevelFinishUI/LevelFinishUI.tscn" id="13_wp3pm"]
 [ext_resource type="PackedScene" uid="uid://bdhl64qa8mbh4" path="res://levels/levels/level_2a.tscn" id="14_yqjst"]
+[ext_resource type="PackedScene" uid="uid://do6kyva5h7e15" path="res://menus/transition.tscn" id="15_50rb2"]
 
 [sub_resource type="Resource" id="Resource_ukvqh"]
 script = ExtResource("2_hbb88")
@@ -62,10 +63,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer", "transition")]
 script = ExtResource("1_vm7no")
 level_time = 10.0
 level_timer = NodePath("LevelTimer")
+transition = NodePath("Transition")
 stacks = Array[ExtResource("2_hbb88")]([SubResource("Resource_ukvqh"), SubResource("Resource_y77p3"), SubResource("Resource_a5sql")])
 
 [node name="LevelTimer" type="Timer" parent="."]
@@ -102,8 +104,11 @@ timer = NodePath("../LevelTimer")
 
 [node name="Music" parent="." instance=ExtResource("12_2k84i")]
 
-[node name="LevelFinishUI" parent="." instance=ExtResource("13_wp3pm")]
+[node name="LevelFinishUI" parent="." node_paths=PackedStringArray("transition") instance=ExtResource("13_wp3pm")]
 next_level = ExtResource("14_yqjst")
+transition = NodePath("../Transition")
+
+[node name="Transition" parent="." instance=ExtResource("15_50rb2")]
 
 [connection signal="level_complete" from="." to="LevelFinishUI" method="_on_level_1_level_complete"]
 [connection signal="level_one_complete" from="LevelFinishUI" to="LevelFinishUI" method="_on_level_one_complete"]
