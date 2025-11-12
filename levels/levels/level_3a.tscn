@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://hbpfca08eeos"]
+[gd_scene load_steps=35 format=3 uid="uid://hbpfca08eeos"]
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/basic_level.gd" id="1_t6q73"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="2_hokjj"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ov3yw1gg20xb" path="res://Backgrounds/background_sheets/mine_background.png" id="13_ky1nk"]
 [ext_resource type="Texture2D" uid="uid://bmsi34xekyrcy" path="res://Backgrounds/background_sheets/minecart_background_spirtesheet.png" id="14_xk06d"]
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="17_42l0d"]
+[ext_resource type="PackedScene" uid="uid://cxf81gtxel11e" path="res://levels/levels/level_3b.tscn" id="17_rn4kr"]
 
 [sub_resource type="Resource" id="Resource_tthxy"]
 resource_local_to_scene = true
@@ -171,6 +172,7 @@ position = Vector2(4.5, 394.5)
 texture = ExtResource("3_0fd8o")
 
 [node name="LevelFinishUI" parent="." instance=ExtResource("5_sc6c1")]
+next_level = ExtResource("17_rn4kr")
 
 [node name="Music" parent="." instance=ExtResource("17_42l0d")]
 
