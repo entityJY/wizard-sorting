@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dsihh7nrvb3c0"]
+[gd_scene load_steps=28 format=3 uid="uid://dsihh7nrvb3c0"]
 
 [ext_resource type="Script" uid="uid://bgjq2kb615dxg" path="res://levels/timed_level.gd" id="1_dgoy4"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_cah7x"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://hbpfca08eeos" path="res://levels/levels/level_3a.tscn" id="12_tpury"]
 [ext_resource type="PackedScene" uid="uid://bsl7r4j1kwnq4" path="res://menus/timer/timer.tscn" id="13_cah7x"]
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="14_2h30h"]
+[ext_resource type="PackedScene" uid="uid://do6kyva5h7e15" path="res://menus/transition.tscn" id="14_bu05y"]
 [ext_resource type="Texture2D" uid="uid://c38yn3aogn6nw" path="res://Backgrounds/background_sheets/hearth_animated.png" id="14_tpury"]
 
 [sub_resource type="Resource" id="Resource_hevaq"]
@@ -90,10 +91,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer", "transition")]
 script = ExtResource("1_dgoy4")
 level_time = 10.0
 level_timer = NodePath("LevelTimer")
+transition = NodePath("Transition")
 stacks = Array[ExtResource("2_cah7x")]([SubResource("Resource_hevaq"), SubResource("Resource_y16rq"), SubResource("Resource_dgoy4"), SubResource("Resource_cah7x")])
 
 [node name="LevelTimer" type="Timer" parent="."]
@@ -123,8 +125,11 @@ sprite_frames = SubResource("SpriteFrames_0qbk7")
 position = Vector2(4.5, 394.5)
 texture = ExtResource("10_ef5ck")
 
-[node name="LevelFinishUI" parent="." instance=ExtResource("12_bitus")]
+[node name="LevelFinishUI" parent="." node_paths=PackedStringArray("transition") instance=ExtResource("12_bitus")]
 next_level = ExtResource("12_tpury")
+transition = NodePath("../Transition")
+
+[node name="Transition" parent="." instance=ExtResource("14_bu05y")]
 
 [node name="Timer" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("13_cah7x")]
 position = Vector2(693, -467)

@@ -5,6 +5,8 @@ class_name Level
 @onready var button_press_sfx: AudioStreamPlayer = $Music/button_press_sfx
 @onready var finish_level_sfx: AudioStreamPlayer = $Music/finish_level_sfx
 
+@export var transition: Transition
+
 
 @export var stacks: Array[ItemStack]
 var unsorted_stack: ItemStack
@@ -30,6 +32,8 @@ var start_next_stack = true
 
 
 func _ready():
+	if transition:
+		transition.transition(1)
 	start_stack()
 	$Background.play("default")
 	level_complete.connect(on_level_end)
