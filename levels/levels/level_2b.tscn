@@ -93,7 +93,7 @@ animations = [{
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer", "transition")]
 script = ExtResource("1_dgoy4")
-level_time = 10.0
+level_time = 20.0
 level_timer = NodePath("LevelTimer")
 transition = NodePath("Transition")
 stacks = Array[ExtResource("2_cah7x")]([SubResource("Resource_hevaq"), SubResource("Resource_y16rq"), SubResource("Resource_dgoy4"), SubResource("Resource_cah7x")])
@@ -132,7 +132,7 @@ transition = NodePath("../Transition")
 [node name="Transition" parent="." instance=ExtResource("14_bu05y")]
 
 [node name="Timer" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("13_cah7x")]
-position = Vector2(693, -467)
+position = Vector2(691, -358)
 timer = NodePath("../LevelTimer")
 
 [node name="Music" parent="." instance=ExtResource("14_2h30h")]
