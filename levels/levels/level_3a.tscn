@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://hbpfca08eeos"]
+[gd_scene load_steps=37 format=3 uid="uid://hbpfca08eeos"]
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/basic_level.gd" id="1_t6q73"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="2_hokjj"]
@@ -18,7 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://bmsi34xekyrcy" path="res://Backgrounds/background_sheets/minecart_background_spirtesheet.png" id="14_xk06d"]
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="17_42l0d"]
 [ext_resource type="PackedScene" uid="uid://cxf81gtxel11e" path="res://levels/levels/level_3b.tscn" id="17_rn4kr"]
-[ext_resource type="PackedScene" uid="uid://do6kyva5h7e15" path="res://menus/transition.tscn" id="18_0g6i2"]
+[ext_resource type="PackedScene" uid="uid://b32y2aenw4fgn" path="res://menus/transition.tscn" id="18_0g6i2"]
+[ext_resource type="PackedScene" uid="uid://duihnpnadp7vi" path="res://menus/tutorial.tscn" id="20_k1o1q"]
 
 [sub_resource type="Resource" id="Resource_tthxy"]
 resource_local_to_scene = true
@@ -137,8 +138,8 @@ animations = [{
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("transition")]
 script = ExtResource("1_t6q73")
-transition = NodePath("Transition")
 stacks = Array[ExtResource("2_tfs6e")]([SubResource("Resource_8f8ve"), SubResource("Resource_aj0rt")])
+transition = NodePath("Transition")
 
 [node name="ItemStack" type="Node2D" parent="."]
 position = Vector2(-1, 400)
@@ -173,13 +174,14 @@ offset = Vector2(-1255.5, -1184.5)
 position = Vector2(4.5, 394.5)
 texture = ExtResource("3_0fd8o")
 
-[node name="LevelFinishUI" parent="." node_paths=PackedStringArray("transition") instance=ExtResource("5_sc6c1")]
+[node name="LevelFinishUI" parent="." instance=ExtResource("5_sc6c1")]
 next_level = ExtResource("17_rn4kr")
-transition = NodePath("../Transition")
 
 [node name="Transition" parent="." instance=ExtResource("18_0g6i2")]
 
 [node name="Music" parent="." instance=ExtResource("17_42l0d")]
+
+[node name="Tutorial" parent="." instance=ExtResource("20_k1o1q")]
 
 [connection signal="level_complete" from="." to="LevelFinishUI" method="_on_level_1_level_complete"]
 [connection signal="level_one_complete" from="LevelFinishUI" to="LevelFinishUI" method="_on_level_one_complete"]

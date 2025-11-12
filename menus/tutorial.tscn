@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://duihnpnadp7vi"]
+
+[ext_resource type="Script" uid="uid://bs4kvmma3d60h" path="res://menus/tutorial.gd" id="1_b8guh"]
+[ext_resource type="Texture2D" uid="uid://dnmiunuvrag87" path="res://assets/arrow.png" id="2_74lpy"]
+[ext_resource type="Texture2D" uid="uid://docsqmyggaaq1" path="res://assets/level complete.webp" id="2_ka7hq"]
+[ext_resource type="Texture2D" uid="uid://cvvii5n1w08qn" path="res://assets/arrowhighlight.png" id="3_ka7hq"]
+
+[node name="Tutorial" type="CanvasLayer"]
+script = ExtResource("1_b8guh")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.0
+offset_top = -186.0
+offset_right = 297.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ka7hq")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.99994
+offset_top = 134.0
+offset_right = 133.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("2_74lpy")
+texture_pressed = ExtResource("3_ka7hq")
+texture_hover = ExtResource("3_ka7hq")
+metadata/_edit_group_ = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
