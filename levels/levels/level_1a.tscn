@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bdn1j57uv1wnh"]
+[gd_scene load_steps=22 format=3 uid="uid://bdn1j57uv1wnh"]
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/basic_level.gd" id="1_x1fhx"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_m8r0g"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bq1s578blu1i3" path="res://Backgrounds/background_sheets/manor_spritesheet.png" id="7_x1fhx"]
 [ext_resource type="PackedScene" uid="uid://buc2wf64kxubv" path="res://menus/LevelFinishUI/LevelFinishUI.tscn" id="9_xjxsu"]
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="10_m8r0g"]
+[ext_resource type="PackedScene" uid="uid://b7xdy8gc5gcoj" path="res://levels/levels/level_1b.tscn" id="10_vqfwv"]
 [ext_resource type="AudioStream" uid="uid://my5ief616urc" path="res://sound/move_item.wav" id="11_7r1bk"]
 [ext_resource type="AudioStream" uid="uid://btghl1o8e7uir" path="res://sound/explosion.wav" id="12_tj8pf"]
 [ext_resource type="AudioStream" uid="uid://rhyihh3rqexq" path="res://sound/click.wav" id="13_usq73"]
@@ -82,6 +83,7 @@ position = Vector2(4.5, 394.5)
 texture = ExtResource("7_tj8pf")
 
 [node name="LevelFinishUI" parent="." instance=ExtResource("9_xjxsu")]
+next_level = ExtResource("10_vqfwv")
 
 [node name="Music" parent="." instance=ExtResource("10_m8r0g")]
 

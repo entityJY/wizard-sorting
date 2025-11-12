@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://cnl1hwsn7lrgp" path="res://menus/LevelFinishUI/return_to_menu.gd" id="6_fuwn3"]
 [ext_resource type="Texture2D" uid="uid://dnmiunuvrag87" path="res://assets/arrow.png" id="7_ov87u"]
 [ext_resource type="Texture2D" uid="uid://cvvii5n1w08qn" path="res://assets/arrowhighlight.png" id="8_up3dh"]
-[ext_resource type="Theme" uid="uid://4ney4y7vfk1q" path="res://theme.tres" id="9_4h4mq"]
+[ext_resource type="Theme" path="res://theme.tres" id="9_4h4mq"]
 [ext_resource type="Script" uid="uid://dfy2vp503gxab" path="res://menus/LevelFinishUI/level_completed.gd" id="10_g2u2k"]
 [ext_resource type="Script" uid="uid://c66d1jsi8mpms" path="res://menus/LevelFinishUI/score.gd" id="11_juj26"]
 
@@ -87,3 +87,4 @@ metadata/_edit_group_ = true
 [connection signal="level_one_complete" from="." to="ScoreBackground/LevelCompleted" method="_on_level_finish_ui_level_one_complete"]
 [connection signal="level_one_complete" from="." to="ScoreBackground/Score" method="_on_level_finish_ui_level_one_complete"]
 [connection signal="pressed" from="ScoreBackground/ReturnToMenu" to="ScoreBackground/ReturnToMenu" method="_on_pressed"]
+[connection signal="button_down" from="ScoreBackground/Continue" to="." method="_on_continue_button_down"]

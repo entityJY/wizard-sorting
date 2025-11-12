@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dsihh7nrvb3c0"]
+[gd_scene load_steps=27 format=3 uid="uid://dsihh7nrvb3c0"]
 
 [ext_resource type="Script" uid="uid://bgjq2kb615dxg" path="res://levels/timed_level.gd" id="1_dgoy4"]
 [ext_resource type="Script" uid="uid://b3t2d1rtlp32f" path="res://resources/item_stack.gd" id="2_cah7x"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="9_pdfws"]
 [ext_resource type="Texture2D" uid="uid://b5f7roo05aq48" path="res://assets/table base.png" id="10_ef5ck"]
 [ext_resource type="PackedScene" uid="uid://buc2wf64kxubv" path="res://menus/LevelFinishUI/LevelFinishUI.tscn" id="12_bitus"]
+[ext_resource type="PackedScene" uid="uid://hbpfca08eeos" path="res://levels/levels/level_3a.tscn" id="12_tpury"]
 [ext_resource type="PackedScene" uid="uid://bsl7r4j1kwnq4" path="res://menus/timer/timer.tscn" id="13_cah7x"]
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="14_2h30h"]
 [ext_resource type="Texture2D" uid="uid://c38yn3aogn6nw" path="res://Backgrounds/background_sheets/hearth_animated.png" id="14_tpury"]
@@ -115,20 +116,21 @@ top_level = true
 position = Vector2(4.5, 394.5)
 texture = ExtResource("9_pdfws")
 
+[node name="Background" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0qbk7")
+
 [node name="TableBase" type="Sprite2D" parent="."]
 position = Vector2(4.5, 394.5)
 texture = ExtResource("10_ef5ck")
 
 [node name="LevelFinishUI" parent="." instance=ExtResource("12_bitus")]
+next_level = ExtResource("12_tpury")
 
 [node name="Timer" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("13_cah7x")]
 position = Vector2(693, -467)
 timer = NodePath("../LevelTimer")
 
 [node name="Music" parent="." instance=ExtResource("14_2h30h")]
-
-[node name="Background" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_0qbk7")
 
 [connection signal="level_complete" from="." to="LevelFinishUI" method="_on_level_1_level_complete"]
 [connection signal="level_one_complete" from="LevelFinishUI" to="LevelFinishUI" method="_on_level_one_complete"]
