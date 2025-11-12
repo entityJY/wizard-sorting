@@ -146,11 +146,11 @@ func calculate_score():
 		for item in right_stack:
 			if not right_keys[0] in item.attributes or Item.Attributes.DISCARD in item.attributes:
 				score -= 2
-		for item in discard_stack:
-			if Item.Attributes.DISCARD in item.attributes:
-				score += 1
-			else:
-				score -= 1
+	for item in discard_stack:
+		if Item.Attributes.DISCARD in item.attributes:
+			score += 1
+		else:
+			score -= 1
 	
 	if start_next_stack:
 		get_tree().create_timer(TIME_BETWEEN_STACKS).timeout.connect(_on_stack_timer_timeout)
