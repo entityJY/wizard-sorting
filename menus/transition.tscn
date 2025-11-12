@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b32y2aenw4fgn"]
+[gd_scene load_steps=3 format=3 uid="uid://do6kyva5h7e15"]
 
 [ext_resource type="Script" uid="uid://d6h0fikh04on" path="res://menus/transition.gd" id="1_owp2k"]
 [ext_resource type="Texture2D" uid="uid://b3hvqovfib8p3" path="res://assets/transition.png" id="2_irm0i"]
 
 [node name="Transition" type="CanvasLayer"]
+layer = 5
 script = ExtResource("1_owp2k")
 
 [node name="TextureRect" type="TextureRect" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bdhl64qa8mbh4"]
+[gd_scene load_steps=25 format=3 uid="uid://bdhl64qa8mbh4"]
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/basic_level.gd" id="1_20opy"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="2_8l0e1"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dsihh7nrvb3c0" path="res://levels/levels/level_2b.tscn" id="12_gf7js"]
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="13_ega0g"]
 [ext_resource type="Texture2D" uid="uid://c38yn3aogn6nw" path="res://Backgrounds/background_sheets/hearth_animated.png" id="13_gf7js"]
+[ext_resource type="PackedScene" uid="uid://do6kyva5h7e15" path="res://menus/transition.tscn" id="14_kqhbp"]
 
 [sub_resource type="Resource" id="Resource_hevaq"]
 script = ExtResource("2_fvrxv")
@@ -77,8 +78,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("transition")]
 script = ExtResource("1_20opy")
+transition = NodePath("Transition")
 stacks = Array[ExtResource("2_fvrxv")]([SubResource("Resource_hevaq"), SubResource("Resource_y16rq")])
 
 [node name="ItemStack" type="Node2D" parent="."]
@@ -106,8 +108,11 @@ sprite_frames = SubResource("SpriteFrames_7nk1n")
 position = Vector2(4.5, 394.5)
 texture = ExtResource("3_lfnxh")
 
-[node name="LevelFinishUI" parent="." instance=ExtResource("5_jq78i")]
+[node name="LevelFinishUI" parent="." node_paths=PackedStringArray("transition") instance=ExtResource("5_jq78i")]
 next_level = ExtResource("12_gf7js")
+transition = NodePath("../Transition")
+
+[node name="Transition" parent="." instance=ExtResource("14_kqhbp")]
 
 [node name="Music" parent="." instance=ExtResource("13_ega0g")]
 

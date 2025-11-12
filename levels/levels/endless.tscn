@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://t0ynn7qahxa3"]
+[gd_scene load_steps=35 format=3 uid="uid://t0ynn7qahxa3"]
 
 [ext_resource type="Script" uid="uid://ddcrmbr6tvvh2" path="res://levels/endless_level.gd" id="1_lhpit"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="2_56i3n"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="15_tk63e"]
 [ext_resource type="PackedScene" uid="uid://bsl7r4j1kwnq4" path="res://menus/timer/timer.tscn" id="19_2dkhr"]
 [ext_resource type="Texture2D" uid="uid://c4sxbmr86avp3" path="res://Backgrounds/forest_background.png" id="20_tk63e"]
+[ext_resource type="PackedScene" path="res://menus/transition.tscn" id="21_2xcmh"]
 
 [sub_resource type="Resource" id="Resource_xsc4g"]
 script = ExtResource("2_s12x1")
@@ -116,10 +117,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("level_timer", "transition")]
 script = ExtResource("1_lhpit")
 level_time = 20.0
 level_timer = NodePath("LevelTimer")
+transition = NodePath("Transition")
 stacks = Array[ExtResource("2_s12x1")]([SubResource("Resource_xsc4g"), SubResource("Resource_dd6q0"), SubResource("Resource_ehhrl"), SubResource("Resource_mwh2e"), SubResource("Resource_brc3a"), SubResource("Resource_s6t3s")])
 
 [node name="Music" parent="." instance=ExtResource("15_tk63e")]
@@ -153,11 +155,14 @@ sprite_frames = SubResource("SpriteFrames_2xcmh")
 position = Vector2(4.5, 394.5)
 texture = ExtResource("3_30fi4")
 
-[node name="LevelFinishUI" parent="." instance=ExtResource("5_hynkl")]
+[node name="LevelFinishUI" parent="." node_paths=PackedStringArray("transition") instance=ExtResource("5_hynkl")]
+transition = NodePath("../Transition")
 
 [node name="Timer" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("19_2dkhr")]
 position = Vector2(662, -407)
 timer = NodePath("../LevelTimer")
+
+[node name="Transition" parent="." instance=ExtResource("21_2xcmh")]
 
 [connection signal="level_complete" from="." to="LevelFinishUI" method="_on_level_1_level_complete"]
 [connection signal="level_one_complete" from="LevelFinishUI" to="LevelFinishUI" method="_on_level_one_complete"]
