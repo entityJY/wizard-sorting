@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bdhl64qa8mbh4"]
+[gd_scene load_steps=24 format=3 uid="uid://bdhl64qa8mbh4"]
 
 [ext_resource type="Script" uid="uid://5y0d4l88w2nq" path="res://levels/basic_level.gd" id="1_20opy"]
 [ext_resource type="Texture2D" uid="uid://dxcmrshjxkgjk" path="res://assets/table front.png" id="2_8l0e1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://b6wciwk4136me" path="res://items/blue_potion.tres" id="6_1arbc"]
 [ext_resource type="Resource" uid="uid://bc2wyf85lloq4" path="res://items/red_mace.tres" id="7_sk8bm"]
 [ext_resource type="Resource" uid="uid://dxgdjwptdx0cn" path="res://items/blue_knife.tres" id="8_m74uo"]
+[ext_resource type="PackedScene" uid="uid://dsihh7nrvb3c0" path="res://levels/levels/level_2b.tscn" id="12_gf7js"]
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="13_ega0g"]
 [ext_resource type="Texture2D" uid="uid://c38yn3aogn6nw" path="res://Backgrounds/background_sheets/hearth_animated.png" id="13_gf7js"]
 
@@ -106,6 +107,7 @@ position = Vector2(4.5, 394.5)
 texture = ExtResource("3_lfnxh")
 
 [node name="LevelFinishUI" parent="." instance=ExtResource("5_jq78i")]
+next_level = ExtResource("12_gf7js")
 
 [node name="Music" parent="." instance=ExtResource("13_ega0g")]
 
