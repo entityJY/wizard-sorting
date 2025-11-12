@@ -28,8 +28,13 @@ var TIME_BETWEEN_STACKS = .25
 
 var start_next_stack = true
 
+signal tutorial(level: int)
+
 
 func _ready():
+	if get_tree().current_scene.get_name() == "Level1":
+		tutorial.emit(1)
+	print(get_tree().current_scene.get_name() == "Level1")
 	start_stack()
 	$Background.play("default")
 	level_complete.connect(on_level_end)
