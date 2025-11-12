@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://hbpfca08eeos" path="res://levels/levels/level_3a.tscn" id="12_tpury"]
 [ext_resource type="PackedScene" uid="uid://bsl7r4j1kwnq4" path="res://menus/timer/timer.tscn" id="13_cah7x"]
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="14_2h30h"]
-[ext_resource type="PackedScene" uid="uid://do6kyva5h7e15" path="res://menus/transition.tscn" id="14_bu05y"]
+[ext_resource type="PackedScene" uid="uid://b32y2aenw4fgn" path="res://menus/transition.tscn" id="14_bu05y"]
 [ext_resource type="Texture2D" uid="uid://c38yn3aogn6nw" path="res://Backgrounds/background_sheets/hearth_animated.png" id="14_tpury"]
 
 [sub_resource type="Resource" id="Resource_hevaq"]

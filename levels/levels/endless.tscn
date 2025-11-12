@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://wrii0mqf400d" path="res://sound/music.tscn" id="15_tk63e"]
 [ext_resource type="PackedScene" uid="uid://bsl7r4j1kwnq4" path="res://menus/timer/timer.tscn" id="19_2dkhr"]
 [ext_resource type="Texture2D" uid="uid://c4sxbmr86avp3" path="res://Backgrounds/forest_background.png" id="20_tk63e"]
-[ext_resource type="PackedScene" path="res://menus/transition.tscn" id="21_2xcmh"]
+[ext_resource type="PackedScene" uid="uid://b32y2aenw4fgn" path="res://menus/transition.tscn" id="21_2xcmh"]
 
 [sub_resource type="Resource" id="Resource_xsc4g"]
 script = ExtResource("2_s12x1")
